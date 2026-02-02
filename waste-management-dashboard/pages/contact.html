@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | EcoTrack</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="brand">
+                <i class="fa-solid fa-leaf"></i> EcoTrack
+            </a>
+            <div class="mobile-menu-btn hidden-on-desktop">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-item-link">Home</a>
+                <a href="about.html" class="nav-item-link">About</a>
+                <a href="services.html" class="nav-item-link">Services</a>
+                <a href="blog.html" class="nav-item-link">Blog</a>
+                <a href="pricing.html" class="nav-item-link">Pricing</a>
+                <a href="contact.html" class="nav-item-link active"
+                    style="color: var(--primary); font-weight: 600;">Contact</a>
+                <div class="nav-spacer"></div>
+                <a href="login.html" class="btn btn-outline">Client Login <i class="fa-regular fa-user"></i></a>
+                <button id="themeToggle" class="btn btn-outline"
+                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i class="fa-solid fa-moon"></i></button>
+                <button id="rtlToggle" class="btn btn-outline"
+                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i
+                        class="fa-solid fa-right-left"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header style="background: var(--light); padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h1 class="display-2 mb-4">Get in Touch</h1>
+            <p class="text-lead">Have questions about our services? We're here to help.</p>
+        </div>
+    </header>
+
+    <section class="container" style="padding: 5rem 1.5rem;">
+        <div class="grid grid-cols-2 gap-4">
+
+            <!-- Contact Info -->
+            <div>
+                <div class="mb-4">
+                    <h3 class="mb-4">Head Office</h3>
+                    <div class="flex gap-4 mb-4">
+                        <a href="https://maps.google.com/?q=1200+Sustainability+Way,+Green+Tech+Park,+San+Francisco,+CA+94105"
+                            target="_blank"
+                            style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <img src="../assets/img/icons/location.png" alt="Location"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </a>
+                        <div>
+                            <h5>Address</h5>
+                            <a href="https://maps.google.com/?q=1200+Sustainability+Way,+Green+Tech+Park,+San+Francisco,+CA+94105"
+                                target="_blank" class="text-muted hover:text-primary">1200 Sustainability Way, Green
+                                Tech Park<br>San Francisco, CA 94105</a>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 mb-4">
+                        <a href="tel:+15551234567"
+                            style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <img src="../assets/img/icons/phone.png" alt="Phone"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </a>
+                        <div>
+                            <h5>Phone</h5>
+                            <a href="tel:+15551234567" class="text-muted hover:text-primary">+1 (555) 123-4567</a>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 mb-4">
+                        <a href="mailto:support@ecotrack.com"
+                            style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <img src="../assets/img/icons/email.png" alt="Email"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </a>
+                        <div>
+                            <h5>Email</h5>
+                            <a href="mailto:support@ecotrack.com"
+                                class="text-muted hover:text-primary">support@ecotrack.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder -->
+                <div
+                    style="width: 100%; height: 300px; background: #e2e8f0; border-radius: var(--radius-lg); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #1f2937;">
+
+                    <!-- Legend -->
+                    <div
+                        style="position: absolute; top: 1rem; right: 1rem; background: white; padding: 0.5rem 1rem; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; gap: 1rem; align-items: center; color: #9ca3af; font-size: 0.85rem; font-weight: 500;">
+                        <span>Traffic <i class="fa-solid fa-circle"
+                                style="font-size: 0.5rem; color: #10B981; margin-left: 0.25rem;"></i></span>
+                        <span>Trucks</span>
+                    </div>
+
+                    <!-- Center Content -->
+                    <i class="fa-solid fa-map"
+                        style="font-size: 3rem; color: #1f2937; margin-bottom: 1rem; opacity: 0.8;"></i>
+                    <span style="font-size: 1.1rem; font-weight: 500; opacity: 0.9;">Interactive Map Integration
+                        Here</span>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="card">
+                <h3 class="mb-4">Send us a Message</h3>
+                <form>
+                    <div class="grid grid-cols-2 gap-2 mb-4">
+                        <div>
+                            <label class="form-label">First Name</label>
+                            <input type="text" class="form-input" placeholder="John">
+                        </div>
+                        <div>
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-input" placeholder="Doe">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" placeholder="john@example.com">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Service Type</label>
+                        <select class="form-input">
+                            <option>Commercial Waste</option>
+                            <option>Residential Pickup</option>
+                            <option>Recycling Audit</option>
+                            <option>Construction Roll-off</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-input" rows="5" placeholder="How can we help?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer style="background: var(--dark); color: white; padding: 3rem 0;">
+        <div class="container grid grid-cols-5">
+            <div>
+                <a href="#" class="brand" style="color: white; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-leaf"></i> EcoTrack
+                </a>
+                <p style="color: #9CA3AF; font-size: 0.9rem;">
+                    Empowering businesses to achieve zero-waste goals through technology.
+                </p>
+            </div>
+            <div>
+                <h4 style="color: white;">Platform</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="coming-soon.html">Bin Management</a></li>
+                    <li><a href="404.html">Scheduling</a></li>
+                    <li><a href="coming-soon.html">Analytics</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Company</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Legal</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Head Office</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <li style="display: flex; gap: 0.5rem;">
+                        <i class="fa-solid fa-location-dot" style="margin-top: 0.2rem;"></i>
+                        <span>1200 Sustainability Way, Green Tech Park<br>San Francisco, CA 94105</span>
+                    </li>
+                    <li style="display: flex; gap: 0.5rem; align-items: center;">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </li>
+                    <li style="display: flex; gap: 0.5rem; align-items: center;">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>support@ecotrack.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container"
+            style="border-top: 1px solid #374151; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.8rem;">
+            &copy; 2026 EcoTrack Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../assets/js/theme-rtl.js"></script>
+</body>
+
+</html>

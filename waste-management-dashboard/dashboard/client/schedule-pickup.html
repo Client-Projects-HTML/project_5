@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Pickup | Client Portal</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../../pages/index.html" class="brand">
+                    <i class="fa-solid fa-leaf"></i> EcoTrack
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="fa-solid fa-house"></i> Overview
+                </a>
+                <a href="schedule-pickup.html" class="nav-item active">
+                    <i class="fa-solid fa-calendar-check"></i> Schedule Pickup
+                </a>
+                <a href="billing.html" class="nav-item">
+                    <i class="fa-solid fa-file-invoice-dollar"></i> Billing & Invoices
+                </a>
+                <a href="support.html" class="nav-item">
+                    <i class="fa-solid fa-headset"></i> Support
+                </a>
+                <div style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 1rem;">
+                    <a href="profile.html" class="nav-item">
+                        <i class="fa-solid fa-user"></i> Profile
+                    </a>
+                    <a href="../../pages/login.html" class="nav-item logout-sidebar">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Dashboard Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+                    <div>
+                        <h2 style="margin-bottom: 0; font-size: 1.25rem;">Schedule a Pickup</h2>
+                        <p class="text-muted" style="font-size: 0.85rem;">Request extra service or bulk removal</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button id="rtlToggle" class="header-btn" title="Toggle RTL">
+                        <i class="fa-solid fa-language"></i>
+                    </button>
+                    <button id="themeToggle" class="header-btn" title="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="header-btn" title="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge"></span>
+                    </button>
+                    <a href="profile.html" class="user-profile">
+                        <div class="user-avatar" style="background: var(--secondary);">T</div>
+                        <div class="user-info">
+                            <span class="user-name">TechCorp HQ</span>
+                            <span class="user-role">Client Portal</span>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <div class="grid grid-cols-2">
+                <div class="card">
+                    <form>
+                        <div class="mb-4">
+                            <label class="form-label">Pickup Type</label>
+                            <select class="form-input">
+                                <option>Extra Bin Clearance</option>
+                                <option>Bulk Item Removal</option>
+                                <option>Hazardous Waste</option>
+                                <option>E-Waste Disposal</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Preferred Date</label>
+                            <input type="date" class="form-input">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Notes / Instructions</label>
+                            <textarea class="form-input" rows="4"
+                                placeholder="Gate code, specific item description, etc."></textarea>
+                        </div>
+                        <button class="btn btn-primary w-full">Submit Request</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h3 class="mb-4">Upcoming Pickups</h3>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex gap-4 items-center p-3 border rounded">
+                            <div class="text-center">
+                                <div class="font-bold text-lg">24</div>
+                                <div class="text-xs text-muted uppercase">Oct</div>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Regular Service</h5>
+                                <p class="text-sm text-muted">Weekly General Waste & Recycling</p>
+                            </div>
+                            <span class="status-badge status-info ml-auto">Scheduled</span>
+                        </div>
+                        <div class="flex gap-4 items-center p-3 border rounded">
+                            <div class="text-center">
+                                <div class="font-bold text-lg">31</div>
+                                <div class="text-xs text-muted uppercase">Oct</div>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Regular Service</h5>
+                                <p class="text-sm text-muted">Weekly General Waste & Recycling</p>
+                            </div>
+                            <span class="status-badge status-info ml-auto">Scheduled</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../../assets/js/theme-rtl.js"></script>
+</body>
+
+</html>

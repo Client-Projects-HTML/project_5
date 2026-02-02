@@ -1,0 +1,85 @@
+/* RTL Support - Clean Layout Adjustment (English Text) */
+html[dir="rtl"] {
+    text-align: right;
+    direction: rtl;
+}
+
+html[dir="rtl"] body {
+    direction: rtl;
+}
+
+/* Sidebar and Main Content Layout for RTL */
+html[dir="rtl"] .sidebar {
+    right: 0;
+    left: auto;
+    border-right: none;
+    border-left: 1px solid var(--border);
+}
+
+html[dir="rtl"] .main-content {
+    margin-left: 0;
+    margin-right: 280px;
+    /* Width of sidebar */
+}
+
+/* Navbar Adjustments */
+html[dir="rtl"] .nav-spacer {
+    border-left: none;
+    border-right: 1px solid var(--border);
+}
+
+html[dir="rtl"] .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+/* Keep icons and specific elements in LTR if they are UI controls that shouldn't flip */
+html[dir="rtl"] #rtlToggle,
+html[dir="rtl"] #themeToggle {
+    direction: ltr;
+}
+
+/* Flip Icons for RTL */
+html[dir="rtl"] .fa-chevron-right::before {
+    content: "\f053";
+}
+
+html[dir="rtl"] .fa-chevron-left::before {
+    content: "\f054";
+}
+
+html[dir="rtl"] .fa-arrow-right::before {
+    content: "\f060";
+}
+
+html[dir="rtl"] .fa-arrow-left::before {
+    content: "\f061";
+}
+
+/* Table Headings Alignment */
+html[dir="rtl"] .data-table th,
+html[dir="rtl"] .data-table td {
+    text-align: right;
+}
+
+/* Fix for stat cards if needed */
+html[dir="rtl"] .stat-card div:last-child {
+    margin-right: 1rem;
+    margin-left: 0;
+}
+
+html[dir="rtl"] .flex.gap-2 {
+    flex-direction: row;
+    /* Usually row is fine if direction is rtl */
+}
+
+/* Button Icon Spacing */
+html[dir="rtl"] .btn i {
+    margin-right: 0.5rem;
+    margin-left: 0;
+}
+
+html[dir="rtl"] .ml-2 {
+    margin-left: 0 !important;
+    margin-right: 0.5rem !important;
+}

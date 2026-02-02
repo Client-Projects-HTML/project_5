@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bin Management | Admin Dashboard</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../../pages/index.html" class="brand">
+                    <i class="fa-solid fa-leaf"></i> EcoTrack
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="fa-solid fa-gauge"></i> Dashboard
+                </a>
+                <a href="bin-management.html" class="nav-item active">
+                    <i class="fa-solid fa-dumpster"></i> Bin Management
+                </a>
+                <a href="route-planning.html" class="nav-item">
+                    <i class="fa-solid fa-route"></i> Route Planning
+                </a>
+                <a href="client-management.html" class="nav-item">
+                    <i class="fa-solid fa-users"></i> Client Management
+                </a>
+                <a href="analytics.html" class="nav-item">
+                    <i class="fa-solid fa-chart-line"></i> Analytics
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <i class="fa-solid fa-file-invoice"></i> Reports
+                </a>
+                <div style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 1rem;">
+
+                    <a href="settings.html" class="nav-item">
+                        <i class="fa-solid fa-gear"></i> Settings
+                    </a>
+                    <a href="../../pages/login.html" class="nav-item logout-sidebar">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+                    <div>
+                        <h2 style="margin-bottom: 0; font-size: 1.25rem;">Bin Management</h2>
+                        <p class="text-muted" style="font-size: 0.85rem;">Monitor bin inventory and status</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                        <i class="fa-solid fa-plus"></i> Add New Bin
+                    </button>
+                    <button id="rtlToggle" class="header-btn" title="Toggle RTL">
+                        <i class="fa-solid fa-language"></i>
+                    </button>
+                    <button id="themeToggle" class="header-btn" title="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="header-btn" title="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge"></span>
+                    </button>
+                    <div class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <span class="user-name">Admin User</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Filters -->
+            <div class="card mb-4">
+                <div class="flex gap-4">
+                    <div style="flex: 1;">
+                        <input type="text" class="form-input" placeholder="Search by Bin ID or Location...">
+                    </div>
+                    <select class="form-input" style="width: 200px;">
+                        <option>All Bin Types</option>
+                        <option>General Waste</option>
+                        <option>Recycling</option>
+                        <option>Compost</option>
+                    </select>
+                    <select class="form-input" style="width: 200px;">
+                        <option>All Statuses</option>
+                        <option>Active</option>
+                        <option>Maintenance</option>
+                        <option>Full</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Bins Grid -->
+            <div class="grid grid-cols-3">
+                <!-- Bin Card 1 -->
+                <div class="card">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h4>Bin #4092</h4>
+                            <p class="text-muted text-sm">TechCorp HQ - Zone B</p>
+                        </div>
+                        <span class="status-badge status-danger">Full</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-semibold">General Waste</span>
+                        <span class="text-sm">95%</span>
+                    </div>
+                    <div style="height: 8px; background: #E5E7EB; border-radius: 4px; margin-bottom: 1rem;">
+                        <div style="width: 95%; height: 100%; background: var(--danger); border-radius: 4px;"></div>
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">View
+                            Details</button>
+                        <button class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Schedule
+                            Pickup</button>
+                    </div>
+                </div>
+
+                <!-- Bin Card 2 -->
+                <div class="card">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h4>Bin #4093</h4>
+                            <p class="text-muted text-sm">TechCorp HQ - Zone B</p>
+                        </div>
+                        <span class="status-badge status-success">Active</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-semibold">Recycling (Blue)</span>
+                        <span class="text-sm">45%</span>
+                    </div>
+                    <div style="height: 8px; background: #E5E7EB; border-radius: 4px; margin-bottom: 1rem;">
+                        <div style="width: 45%; height: 100%; background: var(--secondary); border-radius: 4px;"></div>
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">View
+                            Details</button>
+                    </div>
+                </div>
+
+                <!-- Bin Card 3 -->
+                <div class="card">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h4>Bin #4105</h4>
+                            <p class="text-muted text-sm">City Mall - West Wing</p>
+                        </div>
+                        <span class="status-badge status-warning">Wait</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-semibold">Compost (Green)</span>
+                        <span class="text-sm">82%</span>
+                    </div>
+                    <div style="height: 8px; background: #E5E7EB; border-radius: 4px; margin-bottom: 1rem;">
+                        <div style="width: 82%; height: 100%; background: var(--accent); border-radius: 4px;"></div>
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">View
+                            Details</button>
+                    </div>
+                </div>
+
+                <!-- Bin Card 4 -->
+                <div class="card">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h4>Bin #5001</h4>
+                            <p class="text-muted text-sm">Central Park - North</p>
+                        </div>
+                        <span class="status-badge status-success">Active</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-semibold">General Waste</span>
+                        <span class="text-sm">12%</span>
+                    </div>
+                    <div style="height: 8px; background: #E5E7EB; border-radius: 4px; margin-bottom: 1rem;">
+                        <div style="width: 12%; height: 100%; background: var(--primary); border-radius: 4px;"></div>
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">View
+                            Details</button>
+                    </div>
+                </div>
+
+                <!-- Bin Card 5 -->
+                <div class="card">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h4>Bin #5002</h4>
+                            <p class="text-muted text-sm">Central Park - South</p>
+                        </div>
+                        <span class="status-badge status-success">Active</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-semibold">Recycling</span>
+                        <span class="text-sm">28%</span>
+                    </div>
+                    <div style="height: 8px; background: #E5E7EB; border-radius: 4px; margin-bottom: 1rem;">
+                        <div style="width: 28%; height: 100%; background: var(--secondary); border-radius: 4px;"></div>
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">View
+                            Details</button>
+                    </div>
+                </div>
+
+                <!-- Bin Card 6 -->
+                <div class="card">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h4>Bin #8821</h4>
+                            <p class="text-muted text-sm">Industrial Park Blvd</p>
+                        </div>
+                        <span class="status-badge" style="background: #F3F4F6; color: #374151;">Maintenance</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-semibold">Hazardous</span>
+                        <span class="text-sm">0%</span>
+                    </div>
+                    <div style="height: 8px; background: #E5E7EB; border-radius: 4px; margin-bottom: 1rem;">
+                        <div style="width: 0%; height: 100%; background: var(--text-muted); border-radius: 4px;"></div>
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Log
+                            Repair</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../../assets/js/theme-rtl.js"></script>
+</body>
+
+</html>

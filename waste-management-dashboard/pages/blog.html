@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | EcoTrack</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="brand">
+                <i class="fa-solid fa-leaf"></i> EcoTrack
+            </a>
+            <div class="mobile-menu-btn hidden-on-desktop">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-item-link">Home</a>
+                <a href="about.html" class="nav-item-link">About</a>
+                <a href="services.html" class="nav-item-link">Services</a>
+                <a href="blog.html" class="nav-item-link active"
+                    style="color: var(--primary); font-weight: 600;">Blog</a>
+                <a href="pricing.html" class="nav-item-link">Pricing</a>
+                <a href="contact.html" class="nav-item-link">Contact</a>
+                <div class="nav-spacer"></div>
+                <a href="login.html" class="btn btn-outline">Client Login <i class="fa-regular fa-user"></i></a>
+                <button id="themeToggle" class="btn btn-outline"
+                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i class="fa-solid fa-moon"></i></button>
+                <button id="rtlToggle" class="btn btn-outline"
+                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i
+                        class="fa-solid fa-right-left"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header style="background: var(--light); padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h1 class="display-2 mb-4">Sustainability News</h1>
+            <p class="text-lead">Latest updates, tips, and industry insights.</p>
+        </div>
+    </header>
+
+    <section class="container" style="padding: 5rem 1.5rem;">
+
+        <!-- Search & Filter -->
+        <div class="flex justify-between items-center mb-4">
+            <div class="flex gap-2">
+                <a href="#" class="btn btn-primary blog-filter-btn" data-filter="all"
+                    style="padding: 0.5rem 1rem; font-size: 0.85rem;">All</a>
+                <a href="#" class="btn btn-outline blog-filter-btn" data-filter="tips"
+                    style="padding: 0.5rem 1rem; font-size: 0.85rem;">Tips</a>
+                <a href="#" class="btn btn-outline blog-filter-btn" data-filter="company"
+                    style="padding: 0.5rem 1rem; font-size: 0.85rem;">Company News</a>
+                <a href="#" class="btn btn-outline blog-filter-btn" data-filter="regulations"
+                    style="padding: 0.5rem 1rem; font-size: 0.85rem;">Regulations</a>
+            </div>
+            <div style="width: 300px;">
+                <input type="text" class="form-input" placeholder="Search articles...">
+            </div>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="grid grid-cols-3" id="blogGrid">
+
+            <!-- Article 1 -->
+            <article class="card blog-item" data-category="tips" style="padding: 0; overflow: hidden;">
+                <div style="height: 200px; overflow: hidden;">
+                    <img src="../assets/img/blog/recycling-mistakes.png" alt="Recycling Mistakes"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="padding: 1.5rem;">
+                    <div class="flex gap-2 text-muted" style="font-size: 0.8rem; margin-bottom: 0.5rem;">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 24, 2026</span>
+                        <span><i class="fa-regular fa-user"></i> By Sarah Jenkins</span>
+                        <span><i class="fa-solid fa-tag"></i> Recycling Education</span>
+                    </div>
+                    <h3 style="font-size: 1.25rem;"><a href="blog-details.html">5 Common Recycling Mistakes Businesses
+                            Make</a></h3>
+                    <p class="text-muted mt-2" style="font-size: 0.9rem;">Recycling is a crucial part of any sustainable
+                        business strategy, but good intentions often lead to contamination. Here’s how to fix it.</p>
+                    <p class="text-muted mt-2" style="font-size: 0.9rem;">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <a href="blog-details.html" class="text-primary mt-4"
+                        style="display: inline-block; font-weight: 500;">Read More <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="card blog-item" data-category="tips" style="padding: 0; overflow: hidden;">
+                <div style="height: 200px; overflow: hidden;">
+                    <img src="../assets/img/blog/ai-sorting.png" alt="AI Sorting"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="padding: 1.5rem;">
+                    <div class="flex gap-2 text-muted" style="font-size: 0.8rem; margin-bottom: 0.5rem;">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 18, 2026</span>
+                        <span><i class="fa-regular fa-user"></i> By David Chen</span>
+                        <span><i class="fa-solid fa-tag"></i> Innovation</span>
+                    </div>
+                    <h3 style="font-size: 1.25rem;"><a href="blog-details.html">The Future of Waste: AI Sorting</a></h3>
+                    <p class="text-muted mt-2" style="font-size: 0.9rem;">How artificial intelligence is revolutionizing
+                        the way sorting facilities process recyclable materials.</p>
+                    <a href="blog-details.html" class="text-primary mt-4"
+                        style="display: inline-block; font-weight: 500;">Read More <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="card blog-item" data-category="company" style="padding: 0; overflow: hidden;">
+                <div style="height: 200px; overflow: hidden;">
+                    <img src="../assets/img/blog/expansion-seattle.png" alt="Seattle Expansion"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="padding: 1.5rem;">
+                    <div class="flex gap-2 text-muted" style="font-size: 0.8rem; margin-bottom: 0.5rem;">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 10, 2026</span>
+                        <span><i class="fa-regular fa-user"></i> By EcoTrack Team</span>
+                        <span><i class="fa-solid fa-tag"></i> Company</span>
+                    </div>
+                    <h3 style="font-size: 1.25rem;"><a href="blog-details.html">EcoTrack Expands to West Coast</a></h3>
+                    <p class="text-muted mt-2" style="font-size: 0.9rem;">We are proud to announce our new fleet
+                        operations center opening in Seattle this month.</p>
+                    <a href="blog-details.html" class="text-primary mt-4"
+                        style="display: inline-block; font-weight: 500;">Read More <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+
+
+            <!-- Article 4 (Regulations) -->
+            <article class="card blog-item" data-category="regulations" style="padding: 0; overflow: hidden;">
+                <div style="height: 200px; overflow: hidden;">
+                    <img src="../assets/img/blog/recycling-mistakes.png" alt="Compliance Guidelines"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="padding: 1.5rem;">
+                    <div class="flex gap-2 text-muted" style="font-size: 0.8rem; margin-bottom: 0.5rem;">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 05, 2026</span>
+                        <span><i class="fa-regular fa-user"></i> By Legal Team</span>
+                        <span><i class="fa-solid fa-tag"></i> Regulations</span>
+                    </div>
+                    <h3 style="font-size: 1.25rem;"><a href="blog-details.html">2027 Waste Compliance Guidelines</a>
+                    </h3>
+                    <p class="text-muted mt-2" style="font-size: 0.9rem;">New federal regulations for commercial waste
+                        disposal enacted this quarter. Are you compliant?</p>
+                    <a href="blog-details.html" class="text-primary mt-4"
+                        style="display: inline-block; font-weight: 500;">Read More <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--dark); color: white; padding: 3rem 0;">
+        <div class="container grid grid-cols-5">
+            <div>
+                <a href="#" class="brand" style="color: white; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-leaf"></i> EcoTrack
+                </a>
+                <p style="color: #9CA3AF; font-size: 0.9rem;">
+                    Empowering businesses to achieve zero-waste goals through technology.
+                </p>
+            </div>
+            <div>
+                <h4 style="color: white;">Platform</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="coming-soon.html">Bin Management</a></li>
+                    <li><a href="404.html">Scheduling</a></li>
+                    <li><a href="coming-soon.html">Analytics</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Company</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Legal</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Head Office</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <li style="display: flex; gap: 0.5rem;">
+                        <i class="fa-solid fa-location-dot" style="margin-top: 0.2rem;"></i>
+                        <span>1200 Sustainability Way, Green Tech Park<br>San Francisco, CA 94105</span>
+                    </li>
+                    <li style="display: flex; gap: 0.5rem; align-items: center;">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </li>
+                    <li style="display: flex; gap: 0.5rem; align-items: center;">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>support@ecotrack.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container"
+            style="border-top: 1px solid #374151; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.8rem;">
+            &copy; 2026 EcoTrack Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Blog Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterBtns = document.querySelectorAll('.blog-filter-btn');
+            const blogItems = document.querySelectorAll('.blog-item');
+            const searchInput = document.querySelector('input[placeholder="Search articles..."]');
+
+            function filterItems(category, searchTerm = '') {
+                blogItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    const title = item.querySelector('h3').textContent.toLowerCase();
+                    const desc = item.querySelector('p').textContent.toLowerCase();
+                    const contentValues = title + ' ' + desc;
+
+                    const matchesCategory = category === 'all' || itemCategory === category;
+                    const matchesSearch = contentValues.includes(searchTerm);
+
+                    if (matchesCategory && matchesSearch) {
+                        item.style.display = 'block';
+                        // Add animation class if needed
+                        item.animate([
+                            { opacity: 0, transform: 'translateY(20px)' },
+                            { opacity: 1, transform: 'translateY(0)' }
+                        ], {
+                            duration: 300,
+                            easing: 'ease-out'
+                        });
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            // Category Filter
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // Update active state
+                    filterBtns.forEach(b => {
+                        b.classList.remove('btn-primary');
+                        b.classList.add('btn-outline');
+                    });
+                    btn.classList.remove('btn-outline');
+                    btn.classList.add('btn-primary');
+
+                    const filterValue = btn.getAttribute('data-filter');
+                    const searchValue = searchInput ? searchInput.value.toLowerCase() : '';
+
+                    filterItems(filterValue, searchValue);
+                });
+            });
+
+            // Search Filter
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const searchValue = e.target.value.toLowerCase();
+                    const activeBtn = document.querySelector('.blog-filter-btn.btn-primary');
+                    const activeCategory = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+
+                    filterItems(activeCategory, searchValue);
+                });
+            }
+        });
+    </script>
+
+
+    <script src="../assets/js/theme-rtl.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans | EcoTrack</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="brand">
+                <i class="fa-solid fa-leaf"></i> EcoTrack
+            </a>
+            <div class="mobile-menu-btn hidden-on-desktop">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-item-link">Home</a>
+                <a href="about.html" class="nav-item-link">About</a>
+                <a href="services.html" class="nav-item-link">Services</a>
+                <a href="blog.html" class="nav-item-link">Blog</a>
+                <a href="pricing.html" class="nav-item-link active"
+                    style="color: var(--primary); font-weight: 600;">Pricing</a>
+                <a href="contact.html" class="nav-item-link">Contact</a>
+                <div class="nav-spacer"></div>
+                <a href="login.html" class="btn btn-outline">Client Login <i class="fa-regular fa-user"></i></a>
+                <button id="themeToggle" class="btn btn-outline"
+                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i class="fa-solid fa-moon"></i></button>
+                <button id="rtlToggle" class="btn btn-outline"
+                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i
+                        class="fa-solid fa-right-left"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header style="padding: 5rem 0; text-align: center;">
+        <div class="container">
+            <h1 class="display-2 mb-4">Transparent Pricing</h1>
+            <p class="text-lead" style="max-width: 600px; margin: 0 auto;">Choose a plan that fits your business scale.
+                No hidden fees, just clean service.</p>
+        </div>
+    </header>
+
+    <section class="container" style="padding-bottom: 5rem;">
+        <div class="grid grid-cols-3">
+            <!-- Basic Plan -->
+            <div class="card" style="border-top: 4px solid var(--text-muted);">
+                <h3 class="text-muted">Small Business</h3>
+                <div class="display-1" style="font-size: 2.5rem; margin: 1rem 0;">$89<span
+                        style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">/mo</span></div>
+                <p class="text-muted mb-4">Essential waste collection for small offices and retail.</p>
+
+                <ul class="flex flex-col gap-2 mb-4">
+                    <li class="flex gap-2 items-center"><i class="fa-solid fa-check text-primary"></i> Weekly Pickup
+                    </li>
+                    <li class="flex gap-2 items-center"><i class="fa-solid fa-check text-primary"></i> 2yd Dumpster</li>
+                    <li class="flex gap-2 items-center"><i class="fa-solid fa-check text-primary"></i> Client Portal
+                        Access</li>
+                    <li class="flex gap-2 items-center" style="opacity: 0.5;"><i class="fa-solid fa-xmark"></i>
+                        Recycling Included</li>
+                </ul>
+                <a href="#" class="btn btn-outline w-full">Choose Plan</a>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="card" style="border-top: 4px solid var(--primary); transform: scale(1.05); z-index: 10;">
+                <div
+                    style="background: var(--primary); color: white; padding: 0.25rem 0.5rem; border-radius: 20px; font-size: 0.75rem; width: fit-content; margin-bottom: 0.5rem;">
+                    MOST POPULAR</div>
+                <h3>Growth</h3>
+                <div class="display-1" style="font-size: 2.5rem; margin: 1rem 0; color: var(--primary);">$159<span
+                        style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">/mo</span></div>
+                <p class="text-muted mb-4">Integrated recycling and waste for growing companies.</p>
+
+                <ul class="flex flex-col gap-2 mb-4">
+                    <li class="flex gap-2 items-center"><i class="fa-solid fa-check text-primary"></i> 2x Weekly Pickup
+                    </li>
+                    <li class="flex gap-2 items-center"><i class="fa-solid fa-check text-primary"></i> 4yd Dumpster</li>
+                    <li class="flex gap-2 items-center"><i class="fa-solid fa-check text-primary"></i> Client Portal
+                        Access</li>
+                    <li class="flex gap-2 items-center"><i class="fa-solid fa-check text-primary"></i> Integrated
+                        Recycling</li>
+                    <li class="flex gap-2 items-center"><i class="fa-solid fa-check text-primary"></i> Waste Analytics
+                        Details</li>
+                </ul>
+                <a href="#" class="btn btn-primary w-full">Choose Plan</a>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="card" style="border-top: 4px solid var(--dark);">
+                <h3>Corporate</h3>
+                <div class="display-1" style="font-size: 2.5rem; margin: 1rem 0;">Custom</div>
+                <p class="text-muted mb-4">Full-scale management for industrial and multi-location.</p>
+
+                <ul class="flex flex-col gap-2 mb-4">
+                    <li class="flex gap-2 items-center"><i class="fa-solid fa-check text-primary"></i> Daily Pickup
+                        Options</li>
+                    <li class="flex gap-2 items-center"><i class="fa-solid fa-check text-primary"></i> Multiple Large
+                        Compactor</li>
+                    <li class="flex gap-2 items-center"><i class="fa-solid fa-check text-primary"></i> Dedicated Account
+                        Mgr</li>
+                    <li class="flex gap-2 items-center"><i class="fa-solid fa-check text-primary"></i> Hazardous Waste
+                        Mgmt</li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline w-full">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer style="background: var(--dark); color: white; padding: 3rem 0;">
+        <div class="container grid grid-cols-5">
+            <div>
+                <a href="#" class="brand" style="color: white; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-leaf"></i> EcoTrack
+                </a>
+                <p style="color: #9CA3AF; font-size: 0.9rem;">
+                    Empowering businesses to achieve zero-waste goals through technology.
+                </p>
+            </div>
+            <div>
+                <h4 style="color: white;">Platform</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="coming-soon.html">Bin Management</a></li>
+                    <li><a href="404.html">Scheduling</a></li>
+                    <li><a href="coming-soon.html">Analytics</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Company</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Legal</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Head Office</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <li style="display: flex; gap: 0.5rem;">
+                        <i class="fa-solid fa-location-dot" style="margin-top: 0.2rem;"></i>
+                        <span>1200 Sustainability Way, Green Tech Park<br>San Francisco, CA 94105</span>
+                    </li>
+                    <li style="display: flex; gap: 0.5rem; align-items: center;">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </li>
+                    <li style="display: flex; gap: 0.5rem; align-items: center;">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>support@ecotrack.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container"
+            style="border-top: 1px solid #374151; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.8rem;">
+            &copy; 2026 EcoTrack Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../assets/js/theme-rtl.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | Client Portal</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../../pages/index.html" class="brand">
+                    <i class="fa-solid fa-leaf"></i> EcoTrack
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="fa-solid fa-house"></i> Overview
+                </a>
+                <a href="schedule-pickup.html" class="nav-item">
+                    <i class="fa-solid fa-calendar-check"></i> Schedule Pickup
+                </a>
+                <a href="billing.html" class="nav-item">
+                    <i class="fa-solid fa-file-invoice-dollar"></i> Billing & Invoices
+                </a>
+                <a href="support.html" class="nav-item active">
+                    <i class="fa-solid fa-headset"></i> Support
+                </a>
+                <div style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 1rem;">
+                    <a href="profile.html" class="nav-item">
+                        <i class="fa-solid fa-user"></i> Profile
+                    </a>
+                    <a href="../../pages/login.html" class="nav-item logout-sidebar">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Dashboard Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+                    <div>
+                        <h2 style="margin-bottom: 0; font-size: 1.25rem;">Help & Support</h2>
+                        <p class="text-muted" style="font-size: 0.85rem;">Report issues and track support tickets</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button id="rtlToggle" class="header-btn" title="Toggle RTL">
+                        <i class="fa-solid fa-language"></i>
+                    </button>
+                    <button id="themeToggle" class="header-btn" title="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="header-btn" title="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge"></span>
+                    </button>
+                    <a href="profile.html" class="user-profile">
+                        <div class="user-avatar" style="background: var(--secondary);">T</div>
+                        <div class="user-info">
+                            <span class="user-name">TechCorp HQ</span>
+                            <span class="user-role">Client Portal</span>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <div class="grid grid-cols-2 gap-6">
+
+                <!-- Contact Methods -->
+                <div class="flex flex-col gap-4">
+                    <div class="card flex items-center gap-4">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(5, 150, 105, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.25rem;">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>24/7 Hotline</h4>
+                            <p class="text-muted text-sm">Immediate assistance for urgent pickups.</p>
+                            <a href="tel:+18005550123" class="text-primary font-bold">+1 (800) 555-0123</a>
+                        </div>
+                    </div>
+
+                    <div class="card flex items-center gap-4">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(5, 150, 105, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.25rem;">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Support</h4>
+                            <p class="text-muted text-sm">Response within 24 hours.</p>
+                            <a href="mailto:support@ecotrack.com"
+                                class="text-primary font-bold">support@ecotrack.com</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="mb-4">Submit a Ticket</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Subject</label>
+                                <input type="text" class="form-input" placeholder="e.g. Missed Pickup">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-input" rows="3"></textarea>
+                            </div>
+                            <button class="btn btn-primary">Create Ticket</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Recent Tickets -->
+                <div class="card h-full">
+                    <h3 class="mb-4">Recent Tickets</h3>
+                    <div class="flex flex-col gap-3">
+                        <div class="p-3 border rounded border-gray-200">
+                            <div class="flex justify-between mb-1">
+                                <span class="font-bold">#TKT-9921 - Damaged Bin Lid</span>
+                                <span class="status-badge status-success">Resolved</span>
+                            </div>
+                            <p class="text-muted text-sm mb-2">Submitted on Oct 12, 2026</p>
+                            <div class="text-sm">
+                                Technicians replaced the lid on bin #4092.
+                            </div>
+                        </div>
+
+                        <div class="p-3 border rounded border-gray-200">
+                            <div class="flex justify-between mb-1">
+                                <span class="font-bold">#TKT-9945 - Billing Inquiry</span>
+                                <span class="status-badge status-warning">Open</span>
+                            </div>
+                            <p class="text-muted text-sm mb-2">Submitted on Oct 18, 2026</p>
+                            <div class="text-sm">
+                                Awaiting response from finance department regarding invoice #2026-009.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../../assets/js/theme-rtl.js"></script>
+</body>
+
+</html>

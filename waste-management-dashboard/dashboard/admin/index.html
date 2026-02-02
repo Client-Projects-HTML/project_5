@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | EcoTrack</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../../pages/index.html" class="brand">
+                    <i class="fa-solid fa-leaf"></i> EcoTrack
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item active">
+                    <i class="fa-solid fa-gauge"></i> Dashboard
+                </a>
+                <a href="bin-management.html" class="nav-item">
+                    <i class="fa-solid fa-dumpster"></i> Bin Management
+                </a>
+                <a href="route-planning.html" class="nav-item">
+                    <i class="fa-solid fa-route"></i> Route Planning
+                </a>
+                <a href="client-management.html" class="nav-item">
+                    <i class="fa-solid fa-users"></i> Client Management
+                </a>
+                <a href="messages.html" class="nav-item">
+                    <i class="fa-solid fa-envelope"></i> Messages
+                </a>
+                <a href="analytics.html" class="nav-item">
+                    <i class="fa-solid fa-chart-line"></i> Analytics
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <i class="fa-solid fa-file-invoice"></i> Reports
+                </a>
+                <div style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 1rem;">
+                    <a href="settings.html" class="nav-item">
+                        <i class="fa-solid fa-gear"></i> Settings
+                    </a>
+                    <a href="../../pages/login.html" class="nav-item logout-sidebar">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+                    <div>
+                        <h2 style="margin-bottom: 0; font-size: 1.25rem;">Operational Overview</h2>
+                        <p class="text-muted" style="font-size: 0.85rem;">Welcome back, Admin</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button id="rtlToggle" class="header-btn" title="Toggle RTL">
+                        <i class="fa-solid fa-language"></i>
+                    </button>
+                    <button id="themeToggle" class="header-btn" title="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="header-btn" title="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge"></span>
+                    </button>
+                    <a href="settings.html" class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <span class="user-name">Admin User</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-4 mb-4">
+                <div class="card stat-card">
+                    <div>
+                        <span class="stat-label">Total Waste Collected</span>
+                        <div class="stat-value">1,240 <span
+                                style="font-size: 1rem; color: var(--text-muted);">tons</span></div>
+                        <span style="color: var(--primary); font-size: 0.85rem;"><i class="fa-solid fa-arrow-up"></i>
+                            12% vs last month</span>
+                    </div>
+                    <div
+                        style="background: rgba(5, 150, 105, 0.1); padding: 0.75rem; border-radius: 8px; color: var(--primary);">
+                        <i class="fa-solid fa-weight-hanging"></i>
+                    </div>
+                </div>
+
+                <div class="card stat-card">
+                    <div>
+                        <span class="stat-label">Recycling Rate</span>
+                        <div class="stat-value">68%</div>
+                        <span style="color: var(--primary); font-size: 0.85rem;"><i class="fa-solid fa-arrow-up"></i> 5%
+                            vs last month</span>
+                    </div>
+                    <div
+                        style="background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 8px; color: var(--secondary);">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+                </div>
+
+                <div class="card stat-card">
+                    <div>
+                        <span class="stat-label">Active Trucks</span>
+                        <div class="stat-value">24<span style="font-size: 1rem; color: var(--text-muted);">/28</span>
+                        </div>
+                        <span style="color: var(--accent); font-size: 0.85rem;">4 in maintenance</span>
+                    </div>
+                    <div
+                        style="background: rgba(245, 158, 11, 0.1); padding: 0.75rem; border-radius: 8px; color: var(--accent);">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+                </div>
+
+                <div class="card stat-card">
+                    <div>
+                        <span class="stat-label">Pending Requests</span>
+                        <div class="stat-value">18</div>
+                        <span style="color: var(--danger); font-size: 0.85rem;">Requires attention</span>
+                    </div>
+                    <div
+                        style="background: rgba(239, 68, 68, 0.1); padding: 0.75rem; border-radius: 8px; color: var(--danger);">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Grid with Charts and Tables -->
+            <div class="grid grid-cols-3">
+
+                <!-- Main Chart -->
+                <div class="card" style="grid-column: span 2;">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3>Waste Diversion Trends</h3>
+                        <button class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.85rem;">Export
+                            Report</button>
+                    </div>
+                    <div style="height: 300px;">
+                        <canvas id="wasteChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Incident/Alerts List -->
+                <div class="card">
+                    <h3>Live Updates</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                        <div class="flex gap-2 items-start">
+                            <i class="fa-solid fa-triangle-exclamation"
+                                style="color: var(--accent); margin-top: 0.2rem;"></i>
+                            <div>
+                                <h5 style="margin-bottom: 0;">Bin #4092 Full</h5>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Zone B - Commercial Plaza</p>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">10 mins ago</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 items-start">
+                            <i class="fa-solid fa-truck-medical" style="color: var(--danger); margin-top: 0.2rem;"></i>
+                            <div>
+                                <h5 style="margin-bottom: 0;">Truck #04 Breakdown</h5>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Route 12 - Downtown</p>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">45 mins ago</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 items-start">
+                            <i class="fa-solid fa-check-circle" style="color: var(--primary); margin-top: 0.2rem;"></i>
+                            <div>
+                                <h5 style="margin-bottom: 0;">Route 08 Completed</h5>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Driver: Mike S.</p>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">1 hour ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Pickups Table -->
+                <div class="card" style="grid-column: span 3;">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3>Recent Pickup Schedules</h3>
+                        <a href="#" style="color: var(--primary); font-size: 0.9rem; font-weight: 500;">View All</a>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Client</th>
+                                    <th>Status</th>
+                                    <th>Bin Type</th>
+                                    <th>Scheduled For</th>
+                                    <th>Location</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="flex items-center gap-2">
+                                            <div
+                                                style="width: 32px; height: 32px; background: #E5E7EB; border-radius: 50%;">
+                                            </div>
+                                            <span>TechCorp HQ</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge status-warning">Pending</span></td>
+                                    <td>Recycling (Blue)</td>
+                                    <td>Today, 2:00 PM</td>
+                                    <td>1200 Innovation Dr.</td>
+                                    <td><button class="btn btn-outline"
+                                            style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Assign</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex items-center gap-2">
+                                            <div
+                                                style="width: 32px; height: 32px; background: #E5E7EB; border-radius: 50%;">
+                                            </div>
+                                            <span>City Mall</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge status-success">Completed</span></td>
+                                    <td>General Waste</td>
+                                    <td>Today, 10:30 AM</td>
+                                    <td>450 Retail Ave.</td>
+                                    <td><button class="btn btn-outline"
+                                            style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex items-center gap-2">
+                                            <div
+                                                style="width: 32px; height: 32px; background: #E5E7EB; border-radius: 50%;">
+                                            </div>
+                                            <span>Green Gardens</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge status-info">En Route</span></td>
+                                    <td>Compost (Green)</td>
+                                    <td>Today, 1:15 PM</td>
+                                    <td>88 Park Lane</td>
+                                    <td><button class="btn btn-outline"
+                                            style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Track</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+
+        // Theme Toggle
+        const toggleBtn = document.getElementById('themeToggle');
+        const body = document.body;
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark');
+            toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            if (body.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        });
+
+        // Init Chart
+        const ctx = document.getElementById('wasteChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Recycled Materials (Tons)',
+                    data: [12, 19, 15, 25, 22, 30, 28],
+                    borderColor: '#059669',
+                    backgroundColor: 'rgba(5, 150, 105, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }, {
+                    label: 'Landfill Waste (Tons)',
+                    data: [8, 12, 10, 8, 5, 4, 3],
+                    borderColor: '#6B7280',
+                    backgroundColor: 'rgba(107, 114, 128, 0.05)',
+                    tension: 0.4,
+                    fill: true,
+                    borderDash: [5, 5]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#F3F4F6'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    <script src="../../assets/js/theme-rtl.js"></script>
+</body>
+
+</html>

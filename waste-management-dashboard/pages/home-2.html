@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residential Services | EcoTrack</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="brand">
+                <i class="fa-solid fa-leaf"></i> EcoTrack
+            </a>
+            <div class="mobile-menu-btn hidden-on-desktop">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-item-link">Home</a>
+                <a href="about.html" class="nav-item-link">About</a>
+                <a href="services.html" class="nav-item-link">Services</a>
+                <a href="blog.html" class="nav-item-link">Blog</a>
+                <a href="pricing.html" class="nav-item-link">Pricing</a>
+                <a href="contact.html" class="nav-item-link">Contact</a>
+                <div class="nav-spacer"></div>
+                <a href="login.html" class="btn btn-outline">Client Login <i class="fa-regular fa-user"></i></a>
+                <button id="themeToggle" class="btn btn-outline"
+                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i class="fa-solid fa-moon"></i></button>
+                <button id="rtlToggle" class="btn btn-outline"
+                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i
+                        class="fa-solid fa-right-left"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Variant (Image Right, Form Left) -->
+    <header class="hero" style="background: white; padding-top: 4rem;">
+        <div class="container grid grid-cols-2 items-center">
+            <div style="order: 2;">
+                <!-- Placeholder for a more 'service' oriented image (truck or bin) -->
+                <div
+                    style="background: #E5E7EB; border-radius: 20px; height: 400px; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <i class="fa-solid fa-house-chimney"
+                        style="font-size: 8rem; color: var(--primary); opacity: 0.5;"></i>
+                    <div
+                        style="position: absolute; bottom: -20px; left: -20px; background: white; padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow-lg);">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-star text-primary"></i>
+                            <i class="fa-solid fa-star text-primary"></i>
+                            <i class="fa-solid fa-star text-primary"></i>
+                            <i class="fa-solid fa-star text-primary"></i>
+                            <i class="fa-solid fa-star text-primary"></i>
+                        </div>
+                        <p style="margin-top: 0.5rem; font-weight: 600;">#1 Rated Residential Service</p>
+                    </div>
+                </div>
+            </div>
+            <div style="order: 1;">
+                <span
+                    style="background: #D1FAE5; color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Home
+                    & Residential</span>
+                <h1 class="display-1 mb-4 mt-4">Curbside Pickup Made Simple.</h1>
+                <p class="text-lead mb-4">
+                    Reliable waste collection, recycling, and compost services for your home. Schedule cleanups
+                    instantly.
+                </p>
+
+                <!-- Quick Zip Code Check Form -->
+                <form class="flex gap-2"
+                    style="background: var(--light); padding: 0.5rem; border-radius: var(--radius-md); border: 1px solid var(--border); max-width: 400px;">
+                    <input type="text" placeholder="Enter Zip Code"
+                        style="border: none; background: transparent; padding: 0.5rem; outline: none; flex: 1;">
+                    <button type="submit" class="btn btn-primary">Check Availability</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Steps Section -->
+    <section class="container" style="padding: 5rem 1.5rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 class="display-2">How It Works</h2>
+            <p class="text-muted">Three simple steps to a cleaner home environment.</p>
+        </div>
+        <div class="grid grid-cols-3" style="text-align: center;">
+            <div>
+                <div
+                    style="width: 80px; height: 80px; background: var(--light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; border: 2px solid var(--primary);">
+                    <span style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">1</span>
+                </div>
+                <h3>Check Address</h3>
+                <p class="text-muted">Enter your zip code to see if our trucks service your neighborhood.</p>
+            </div>
+            <div>
+                <div
+                    style="width: 80px; height: 80px; background: var(--light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; border: 2px solid var(--primary);">
+                    <span style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">2</span>
+                </div>
+                <h3>Select Plan</h3>
+                <p class="text-muted">Choose from weekly pickup, bi-weekly recycling, or on-demand bulk pickup.</p>
+            </div>
+            <div>
+                <div
+                    style="width: 80px; height: 80px; background: var(--light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; border: 2px solid var(--primary);">
+                    <span style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">3</span>
+                </div>
+                <h3>Get Bins</h3>
+                <p class="text-muted">We deliver your color-coded smart bins within 24 hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Highlight -->
+    <section style="background: var(--dark); color: white; padding: 5rem 0;">
+        <div class="container grid grid-cols-2 items-center">
+            <div>
+                <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1.5rem;">Residential Solutions</h2>
+                <ul class="grid gap-4">
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-check-circle" style="color: var(--secondary);"></i>
+                        <span>Curbside Trash Collection</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-check-circle" style="color: var(--secondary);"></i>
+                        <span>Single-Stream Recycling</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-check-circle" style="color: var(--secondary);"></i>
+                        <span>Yard Waste & Composting</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-check-circle" style="color: var(--secondary);"></i>
+                        <span>Electronic Waste Disposal</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-check-circle" style="color: var(--secondary);"></i>
+                        <span>Dumpster Rentals for Renovations</span>
+                    </li>
+                </ul>
+                <a href="services.html" class="btn btn-primary mt-4">View All Services</a>
+            </div>
+            <div style="text-align: center;">
+                <i class="fa-solid fa-hand-holding-heart" style="font-size: 12rem; color: #374151;"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--dark); color: white; padding: 3rem 0;">
+        <div class="container grid grid-cols-5">
+            <div>
+                <a href="#" class="brand" style="color: white; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-leaf"></i> EcoTrack
+                </a>
+                <p style="color: #9CA3AF; font-size: 0.9rem;">
+                    Empowering businesses to achieve zero-waste goals through technology.
+                </p>
+            </div>
+            <div>
+                <h4 style="color: white;">Platform</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="coming-soon.html">Bin Management</a></li>
+                    <li><a href="404.html">Scheduling</a></li>
+                    <li><a href="coming-soon.html">Analytics</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Company</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Legal</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Head Office</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <li style="display: flex; gap: 0.5rem;">
+                        <i class="fa-solid fa-location-dot" style="margin-top: 0.2rem;"></i>
+                        <span>1200 Sustainability Way, Green Tech Park<br>San Francisco, CA 94105</span>
+                    </li>
+                    <li style="display: flex; gap: 0.5rem; align-items: center;">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </li>
+                    <li style="display: flex; gap: 0.5rem; align-items: center;">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>support@ecotrack.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container"
+            style="border-top: 1px solid #374151; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.8rem;">
+            &copy; 2026 EcoTrack Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../assets/js/theme-rtl.js"></script>
+</body>
+
+</html>

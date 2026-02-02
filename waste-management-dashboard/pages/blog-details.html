@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details | EcoTrack</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="brand">
+                <i class="fa-solid fa-leaf"></i> EcoTrack
+            </a>
+            <div class="mobile-menu-btn hidden-on-desktop">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-item-link">Home</a>
+                <a href="about.html" class="nav-item-link">About</a>
+                <a href="services.html" class="nav-item-link">Services</a>
+                <a href="blog.html" class="nav-item-link active"
+                    style="color: var(--primary); font-weight: 600;">Blog</a>
+                <a href="pricing.html" class="nav-item-link">Pricing</a>
+                <a href="contact.html" class="nav-item-link">Contact</a>
+                <div class="nav-spacer"></div>
+                <a href="login.html" class="btn btn-outline">Client Login <i class="fa-regular fa-user"></i></a>
+                <button id="themeToggle" class="btn btn-outline"
+                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i class="fa-solid fa-moon"></i></button>
+                <button id="rtlToggle" class="btn btn-outline"
+                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i
+                        class="fa-solid fa-right-left"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container grid" style="grid-template-columns: 2fr 1fr; gap: 3rem; padding: 5rem 1.5rem;">
+
+        <!-- Main Content -->
+        <article>
+            <div style="height: 400px; background: #E5E7EB; border-radius: var(--radius-lg); margin-bottom: 2rem;">
+            </div>
+
+            <div class="flex gap-4 text-muted mb-4">
+                <span><i class="fa-regular fa-calendar"></i> Oct 24, 2026</span>
+                <span><i class="fa-solid fa-user"></i> By Sarah Jenkins</span>
+                <span><i class="fa-solid fa-tag"></i> Recycling Education</span>
+            </div>
+
+            <h1 class="mb-4">5 Common Recycling Mistakes Businesses Make</h1>
+
+            <p class="text-lead mb-4">Recycling is a crucial part of any sustainable business strategy, but good
+                intentions often lead to contamination. Here’s how to fix it.</p>
+
+            <p class="mb-4 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            <h3 class="mb-4 mt-4">1. Wish-cycling</h3>
+            <p class="mb-4 text-muted">"Wish-cycling" is the practice of tossing questionable items in the recycling
+                bin, hoping they can be recycled. This often leads to entire batches of recycling being sent to the
+                landfill due to contamination. Always check local guidelines.</p>
+
+            <h3 class="mb-4 mt-4">2. Dirty Containers</h3>
+            <p class="mb-4 text-muted">Food residue is a major contaminant. A greasy pizza box or a yogurt cup with
+                leftover spoon scrapings can ruin high-quality paper and plastic bales. A quick rinse makes a huge
+                difference.</p>
+
+            <blockquote
+                style="border-left: 4px solid var(--primary); padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--dark);">
+                "The purity of the recycling stream determines its value. Clean materials are commodities; dirty
+                materials are garbage."
+            </blockquote>
+
+            <h3 class="mb-4 mt-4">Conclusion</h3>
+            <p class="mb-4 text-muted">By educating your team and adding clear signage, you can significantly increase
+                your diversion rates and lower your waste costs.</p>
+
+            <!-- Share -->
+            <div style="padding-top: 2rem; border-top: 1px solid var(--border); margin-top: 2rem;">
+                <span class="text-muted mr-2">Share this post:</span>
+                <a href="#" class="text-primary mr-2"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-primary mr-2"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="text-primary"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="card mb-4" style="background: var(--light);">
+                <div style="margin-bottom: 1.5rem;">
+                    <input type="text" class="form-input" placeholder="Search...">
+                </div>
+
+                <h4 class="mb-4">Categories</h4>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#" class="flex justify-between text-muted hover-primary"><span>Recycling</span>
+                            <span>(12)</span></a></li>
+                    <li><a href="#" class="flex justify-between text-muted hover-primary"><span>Industry News</span>
+                            <span>(5)</span></a></li>
+                    <li><a href="#" class="flex justify-between text-muted hover-primary"><span>Sustainability
+                                Tips</span> <span>(8)</span></a></li>
+                    <li><a href="#" class="flex justify-between text-muted hover-primary"><span>Case Studies</span>
+                            <span>(3)</span></a></li>
+                </ul>
+            </div>
+
+            <div class="card" style="background: var(--light);">
+                <h4 class="mb-4">Recent Posts</h4>
+                <div class="flex flex-col gap-4">
+                    <div class="flex gap-2">
+                        <div
+                            style="width: 60px; height: 60px; background: #D1D5DB; border-radius: var(--radius-sm); flex-shrink: 0;">
+                        </div>
+                        <div>
+                            <h5 style="font-size: 0.9rem; margin-bottom: 0.2rem;"><a href="#">The Future of AI
+                                    Sorting</a></h5>
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Oct 18, 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: var(--dark); color: white; padding: 3rem 0;">
+        <div class="container grid grid-cols-5">
+            <div>
+                <a href="#" class="brand" style="color: white; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-leaf"></i> EcoTrack
+                </a>
+                <p style="color: #9CA3AF; font-size: 0.9rem;">
+                    Empowering businesses to achieve zero-waste goals through technology.
+                </p>
+            </div>
+            <div>
+                <h4 style="color: white;">Platform</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="coming-soon.html">Bin Management</a></li>
+                    <li><a href="404.html">Scheduling</a></li>
+                    <li><a href="coming-soon.html">Analytics</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Company</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Legal</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Head Office</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <li style="display: flex; gap: 0.5rem;">
+                        <i class="fa-solid fa-location-dot" style="margin-top: 0.2rem;"></i>
+                        <span>1200 Sustainability Way, Green Tech Park<br>San Francisco, CA 94105</span>
+                    </li>
+                    <li style="display: flex; gap: 0.5rem; align-items: center;">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </li>
+                    <li style="display: flex; gap: 0.5rem; align-items: center;">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>support@ecotrack.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container"
+            style="border-top: 1px solid #374151; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.8rem;">
+            &copy; 2026 EcoTrack Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../assets/js/theme-rtl.js"></script>
+</body>
+
+</html>

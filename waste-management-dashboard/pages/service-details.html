@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | EcoTrack</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="brand">
+                <i class="fa-solid fa-leaf"></i> EcoTrack
+            </a>
+            <div class="mobile-menu-btn hidden-on-desktop">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-item-link">Home</a>
+                <a href="about.html" class="nav-item-link">About</a>
+                <a href="services.html" class="nav-item-link active"
+                    style="color: var(--primary); font-weight: 600;">Services</a>
+                <a href="blog.html" class="nav-item-link">Blog</a>
+                <a href="pricing.html" class="nav-item-link">Pricing</a>
+                <a href="contact.html" class="nav-item-link">Contact</a>
+                <div class="nav-spacer"></div>
+                <a href="login.html" class="btn btn-outline">Client Login <i class="fa-regular fa-user"></i></a>
+                <button id="themeToggle" class="btn btn-outline"
+                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i class="fa-solid fa-moon"></i></button>
+                <button id="rtlToggle" class="btn btn-outline"
+                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i
+                        class="fa-solid fa-right-left"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <header style="background: var(--dark); color: white; padding: 4rem 0;">
+        <div class="container">
+            <h1 class="display-2 mb-4" style="color: white;">Commercial Waste Collection</h1>
+            <p style="color: #9CA3AF;">Home / Services / Commercial Waste</p>
+        </div>
+    </header>
+
+    <div class="container grid" style="grid-template-columns: 2fr 1fr; gap: 3rem; padding: 5rem 1.5rem;">
+
+        <!-- Main Content -->
+        <div>
+            <img src="../assets/img/blog/expansion-seattle.png" alt="Service Image"
+                style="width: 100%; height: 400px; border-radius: var(--radius-lg); object-fit: cover; margin-bottom: 2rem;">
+
+            <h2 class="mb-4">Sustainable Solutions for Your Business</h2>
+            <p class="mb-4 text-muted">A clean business environment is essential for success. EcoTrack offers
+                comprehensive commercial waste services tailored to your specific industry needs, whether you operate a
+                retail store, office building, restaurant, or manufacturing facility.</p>
+            <p class="mb-4 text-muted">Our fleet consists of modern, low-emission trucks equipped with smart routing
+                technology to ensure reliable pickups and minimal environmental impact.</p>
+
+            <h3 class="mt-4 mb-4">Key Benefits</h3>
+            <div class="grid grid-cols-2 mb-4">
+                <div class="flex gap-2">
+                    <i class="fa-solid fa-check text-primary"></i>
+                    <span>Customized pickup schedules</span>
+                </div>
+                <div class="flex gap-2">
+                    <i class="fa-solid fa-check text-primary"></i>
+                    <span>Waste audit & optimization</span>
+                </div>
+                <div class="flex gap-2">
+                    <i class="fa-solid fa-check text-primary"></i>
+                    <span>Compliance reporting</span>
+                </div>
+                <div class="flex gap-2">
+                    <i class="fa-solid fa-check text-primary"></i>
+                    <span>24/7 Customer support</span>
+                </div>
+            </div>
+
+            <h3 class="mt-4 mb-4">Frequently Asked Questions</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <details style="border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem;">
+                    <summary style="font-weight: 600; cursor: pointer;">How do I determine the right bin size?</summary>
+                    <p class="text-muted mt-2">Our waste consultants will perform a free audit of your operational
+                        output to recommend the most cost-effective bin sizes and pickup frequency.</p>
+                </details>
+                <details style="border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem;">
+                    <summary style="font-weight: 600; cursor: pointer;">What materials are prohibited?</summary>
+                    <p class="text-muted mt-2">Hazardous materials, electronics, and medical waste cannot be placed in
+                        standard commercial bins. Please see our centralized disposal services for these items.</p>
+                </details>
+                <details style="border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem;">
+                    <summary style="font-weight: 600; cursor: pointer;">Can I change my schedule?</summary>
+                    <p class="text-muted mt-2">Yes, you can adjust your pickup schedule instantly through our Client
+                        Portal.</p>
+                </details>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="card mb-4" style="background: var(--light);">
+                <h3 class="mb-4">Other Services</h3>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#"
+                            style="display: block; padding: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text-muted);">Recycling
+                            Programs</a></li>
+                    <li><a href="#"
+                            style="display: block; padding: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text-muted);">Hazardous
+                            Waste</a></li>
+                    <li><a href="#"
+                            style="display: block; padding: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text-muted);">Construction
+                            Debris</a></li>
+                    <li><a href="#"
+                            style="display: block; padding: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text-muted);">Organic
+                            Composting</a></li>
+                </ul>
+            </div>
+
+            <div class="card" style="background: var(--primary); color: white; text-align: center;">
+                <i class="fa-solid fa-phone" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                <h3 style="color: white; margin-bottom: 1rem;">Need Help?</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.9;">Contact our support team for a custom quote.</p>
+                <a href="contact.html" class="btn"
+                    style="background: white; color: var(--primary); width: 100%;">Contact Us</a>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: var(--dark); color: white; padding: 3rem 0;">
+        <div class="container grid grid-cols-5">
+            <div>
+                <a href="#" class="brand" style="color: white; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-leaf"></i> EcoTrack
+                </a>
+                <p style="color: #9CA3AF; font-size: 0.9rem;">
+                    Empowering businesses to achieve zero-waste goals through technology.
+                </p>
+            </div>
+            <div>
+                <h4 style="color: white;">Platform</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="coming-soon.html">Bin Management</a></li>
+                    <li><a href="404.html">Scheduling</a></li>
+                    <li><a href="coming-soon.html">Analytics</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Company</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Legal</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Head Office</h4>
+                <ul style="color: #9CA3AF; font-size: 0.9rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <li style="display: flex; gap: 0.5rem;">
+                        <i class="fa-solid fa-location-dot" style="margin-top: 0.2rem;"></i>
+                        <span>1200 Sustainability Way, Green Tech Park<br>San Francisco, CA 94105</span>
+                    </li>
+                    <li style="display: flex; gap: 0.5rem; align-items: center;">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </li>
+                    <li style="display: flex; gap: 0.5rem; align-items: center;">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>support@ecotrack.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container"
+            style="border-top: 1px solid #374151; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.8rem;">
+            &copy; 2026 EcoTrack Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../assets/js/theme-rtl.js"></script>
+</body>
+
+</html>

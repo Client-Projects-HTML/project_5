@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Admin Dashboard</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../../pages/index.html" class="brand">
+                    <i class="fa-solid fa-leaf"></i> EcoTrack
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="fa-solid fa-gauge"></i> Dashboard
+                </a>
+                <a href="bin-management.html" class="nav-item">
+                    <i class="fa-solid fa-dumpster"></i> Bin Management
+                </a>
+                <a href="route-planning.html" class="nav-item">
+                    <i class="fa-solid fa-route"></i> Route Planning
+                </a>
+                <a href="client-management.html" class="nav-item">
+                    <i class="fa-solid fa-users"></i> Client Management
+                </a>
+                <a href="analytics.html" class="nav-item">
+                    <i class="fa-solid fa-chart-line"></i> Analytics
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <i class="fa-solid fa-file-invoice"></i> Reports
+                </a>
+                <div style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 1rem;">
+
+                    <a href="settings.html" class="nav-item active">
+                        <i class="fa-solid fa-gear"></i> Settings
+                    </a>
+                    <a href="../../pages/login.html" class="nav-item logout-sidebar">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+                    <div>
+                        <h2 style="margin-bottom: 0; font-size: 1.25rem;">System Settings</h2>
+                        <p class="text-muted" style="font-size: 0.85rem;">Dashboard preferences and account overview</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Save
+                        Changes</button>
+                    <button id="rtlToggle" class="header-btn" title="Toggle RTL">
+                        <i class="fa-solid fa-language"></i>
+                    </button>
+                    <button id="themeToggle" class="header-btn" title="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="header-btn" title="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge"></span>
+                    </button>
+                    <div class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <span class="user-name">Admin User</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="grid grid-cols-2">
+
+                <!-- General Settings -->
+                <div class="card">
+                    <h3 class="mb-4">General Profile</h3>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div style="width: 80px; height: 80px; background: #D1D5DB; border-radius: 50%;"></div>
+                        <div>
+                            <button class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.85rem;">Change
+                                Photo</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-input" value="Admin User">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" value="admin@ecotrack.com">
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="card">
+                    <h3 class="mb-4">Notifications</h3>
+                    <div class="flex flex-col gap-4">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" checked>
+                            <span>Email me when a bin is reported full</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" checked>
+                            <span>Email me upon vehicle breakdown alerts</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox">
+                            <span>Weekly summary reports</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Security -->
+                <div class="card" style="grid-column: span 2;">
+                    <h3 class="mb-4">Security</h3>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="mb-4">
+                            <label class="form-label">Current Password</label>
+                            <input type="password" class="form-input" placeholder="••••••••">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">New Password</label>
+                            <input type="password" class="form-input" placeholder="••••••••">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Confirm Password</label>
+                            <input type="password" class="form-input" placeholder="••••••••">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../../assets/js/theme-rtl.js"></script>
+</body>
+
+</html>
