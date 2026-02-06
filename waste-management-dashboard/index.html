@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | EcoTrack</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <title>EcoTrack - Intelligent Waste Management Solutions</title>
+    <meta name="description"
+        content="A feature-rich SaaS platform for commercial waste management, recycling compliance, and operational analytics.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- Navbar -->
-    <!-- Navbar -->
+    <!-- Navigation -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container flex justify-between items-center">
             <a href="index.html" class="brand">
@@ -22,10 +24,10 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
             <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-item-link">Home</a>
+                <a href="index.html" class="nav-item-link active"
+                    style="color: var(--primary); font-weight: 600;">Home</a>
                 <a href="about.html" class="nav-item-link">About</a>
-                <a href="services.html" class="nav-item-link active"
-                    style="color: var(--primary); font-weight: 600;">Services</a>
+                <a href="services.html" class="nav-item-link">Services</a>
                 <a href="blog.html" class="nav-item-link">Blog</a>
                 <a href="pricing.html" class="nav-item-link">Pricing</a>
                 <a href="contact.html" class="nav-item-link">Contact</a>
@@ -40,90 +42,120 @@
         </div>
     </nav>
 
-    <header style="background: var(--light); padding: 4rem 0; text-align: center;">
-        <div class="container">
-            <h1 class="display-2 mb-4">Waste Management Services</h1>
-            <p class="text-lead">Tailored solutions for residential, commercial, and industrial needs.</p>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container grid grid-cols-2 items-center">
+            <div>
+                <span class="text-primary"
+                    style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Sustainable
+                    Operations</span>
+                <h1 class="display-1 mb-4">Smart Waste Management for a Greener Future</h1>
+                <p class="text-lead mb-4">
+                    Optimize your waste collection, ensure regulatory compliance, and drive sustainability with our
+                    AI-powered SaaS platform.
+                </p>
+                <div class="flex gap-4">
+                    <a href="dashboard/admin/index.html" class="btn btn-primary">
+                        View Dashboard Demo <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Placeholder for Hero Image (simulated with icon for now or I could generate one, but let's stick to clean CSS/Icons) -->
+            <div style="text-align: center;">
+                <i class="fa-solid fa-recycle" style="font-size: 15rem; color: var(--primary); opacity: 1;"></i>
+                <!-- In a real app, I'd put a Dashboard Mockup here -->
+            </div>
         </div>
     </header>
 
+    <!-- Features Section -->
     <section class="container" style="padding: 5rem 1.5rem;">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 4rem auto;">
+            <h2 class="display-2">Comprehensive Solutions</h2>
+            <p class="text-muted">Everything you need to manage commercial waste operations in one unified interface.
+            </p>
+        </div>
+
         <div class="grid grid-cols-3">
-            <!-- Service 1 -->
+            <!-- Feature 1 -->
             <div class="card">
                 <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-                    <img src="../assets/img/blog/expansion-seattle.png" alt="Commercial Waste"
+                    <img src="assets/img/blog/recycling-mistakes.png" alt="Bin Service Management"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <h3>Commercial Waste</h3>
-                <p class="text-muted mb-4">Reliable pickup schedules for businesses of all sizes. Includes dumpster
-                    rental and maintenance.</p>
-                <a href="service-details.html" class="btn btn-outline w-full">Learn More</a>
+                <h3>Bin Service Management</h3>
+                <p class="text-muted">Track bin status, fill levels, and maintenance schedules in real-time across all
+                    client locations.</p>
             </div>
 
-            <!-- Service 2 -->
+            <!-- Feature 2 -->
             <div class="card">
                 <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-                    <img src="../assets/img/blog/recycling-mistakes.png" alt="Recycling Programs"
+                    <img src="assets/img/blog/expansion-seattle.png" alt="Smart Scheduling"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <h3>Recycling Programs</h3>
-                <p class="text-muted mb-4">Single-stream recycling services to help your business meet sustainability
-                    goals and regulations.</p>
-                <a href="service-details.html" class="btn btn-outline w-full">Learn More</a>
+                <h3>Smart Scheduling</h3>
+                <p class="text-muted">Automated pickup scheduling portals for clients with route optimization for
+                    drivers.</p>
             </div>
 
-            <!-- Service 3 -->
+            <!-- Feature 3 -->
             <div class="card">
                 <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-                    <img src="../assets/img/blog/ai-sorting.png" alt="Hazardous Waste"
+                    <img src="assets/img/blog/ai-sorting.png" alt="Waste Analytics"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <h3>Hazardous Waste</h3>
-                <p class="text-muted mb-4">Safe, compliant disposal of chemical, medical, and electronic waste
-                    materials.</p>
-                <a href="service-details.html" class="btn btn-outline w-full">Learn More</a>
+                <h3>Waste Analytics</h3>
+                <p class="text-muted">Detailed reporting on recycling rates, waste volume diversion, and compliance
+                    metrics.</p>
             </div>
 
-            <!-- Service 4 -->
+            <!-- Feature 4 -->
             <div class="card">
                 <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-                    <img src="../assets/img/history.png" alt="Construction Debris"
+                    <img src="assets/img/mission.png" alt="Regulatory Compliance"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <h3>Construction Debris</h3>
-                <p class="text-muted mb-4">Roll-off dumpster rentals for construction sites, renovations, and large
-                    cleanouts.</p>
-                <a href="service-details.html" class="btn btn-outline w-full">Learn More</a>
+                <h3>Regulatory Compliance</h3>
+                <p class="text-muted">Ensure your operations meet all local, state, and federal waste disposal
+                    regulations automatically.</p>
             </div>
 
-            <!-- Service 5 -->
+            <!-- Feature 5 -->
             <div class="card">
                 <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-                    <img src="../assets/img/blog/recycling-mistakes.png" alt="Organic Composting"
+                    <img src="assets/img/history.png" alt="Cost Optimization"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <h3>Organic Composting</h3>
-                <p class="text-muted mb-4">Turn food scraps and yard waste into nutrient-rich soil with our composting
-                    program.</p>
-                <a href="service-details.html" class="btn btn-outline w-full">Learn More</a>
+                <h3>Cost Optimization</h3>
+                <p class="text-muted">AI-driven insights to identify inefficiencies and reduce overall waste management
+                    costs.</p>
             </div>
 
-            <!-- Service 6 -->
+            <!-- Feature 6 -->
             <div class="card">
                 <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-                    <img src="../assets/img/careers-hero.png" alt="Waste Consultancy"
+                    <img src="assets/img/map.png" alt="ESG Reporting"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <h3>Waste Consultancy</h3>
-                <p class="text-muted mb-4">Expert audits to optimize your waste streams and reduce operational costs.
-                </p>
-                <a href="service-details.html" class="btn btn-outline w-full">Learn More</a>
+                <h3>ESG Reporting</h3>
+                <p class="text-muted">Generate comprehensive Environmental, Social, and Governance reports with a single
+                    click.</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Call to Action Section -->
+    <section class="container cta-section">
+        <h2 class="display-2" style="margin-bottom: 1.5rem;">Ready to Optimize Your Waste Management?</h2>
+        <p class="text-lead" style="max-width: 700px; margin: 0 auto 2rem auto;">
+            Join hundreds of companies using EcoTrack to streamline operations and achieve sustainability goals.
+        </p>
+        <a href="contact.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">
+            Get Started Today <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </section>
+
     <!-- Footer -->
     <footer style="background: var(--dark); color: white; padding: 3rem 0;">
         <div class="container grid grid-cols-5">
@@ -182,7 +214,7 @@
         </div>
     </footer>
 
-    <script src="../assets/js/theme-rtl.js"></script>
+    <script src="assets/js/theme-rtl.js"></script>
 </body>
 
 </html>

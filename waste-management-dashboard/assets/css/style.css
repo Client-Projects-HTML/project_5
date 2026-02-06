@@ -1125,3 +1125,27 @@ body.dark footer {
 .pr-2 {
     padding-inline-end: 0.5rem;
 }
+
+/* CTA Section */
+.cta-section {
+    padding: 4rem 1.5rem;
+    text-align: center;
+    background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+    border-radius: var(--radius-lg);
+    margin-bottom: 5rem;
+    transition: background 0.3s ease;
+}
+
+/* Dark Mode CTA */
+body.dark .cta-section {
+    background: linear-gradient(135deg, rgba(6, 78, 59, 0.4) 0%, rgba(6, 95, 70, 0.4) 100%);
+    border: 1px solid var(--border);
+}
+
+body.dark .cta-section h2 {
+    color: #F9FAFB;
+}
+
+body.dark .cta-section p {
+    color: #D1D5DB;
+}
