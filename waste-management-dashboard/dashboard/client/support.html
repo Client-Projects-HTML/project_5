@@ -31,10 +31,10 @@
                 <a href="support.html" class="nav-item active">
                     <i class="fa-solid fa-headset"></i> Support
                 </a>
+                <a href="profile.html" class="nav-item">
+                    <i class="fa-solid fa-user"></i> Profile
+                </a>
                 <div style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 1rem;">
-                    <a href="profile.html" class="nav-item">
-                        <i class="fa-solid fa-user"></i> Profile
-                    </a>
                     <a href="../../login.html" class="nav-item logout-sidebar">
                         <i class="fa-solid fa-right-from-bracket"></i> Logout
                     </a>
@@ -47,109 +47,212 @@
             <header class="dashboard-header">
                 <div class="header-left">
                     <button class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
-                    <div>
-                        <h2 style="margin-bottom: 0; font-size: 1.25rem;">Help & Support</h2>
-                        <p class="text-muted" style="font-size: 0.85rem;">Report issues and track support tickets</p>
-                    </div>
+                    <a href="../../index.html" class="dashboard-brand">
+                        <i class="fa-solid fa-leaf"></i> EcoTrack
+                    </a>
+                    <h2 class="header-title">Client Support</h2>
                 </div>
                 <div class="header-actions">
-                    <button id="rtlToggle" class="header-btn" title="Toggle RTL">
+                    <button id="rtlToggle" class="header-btn rtl-toggle" title="Toggle RTL">
                         <i class="fa-solid fa-language"></i>
                     </button>
-                    <button id="themeToggle" class="header-btn" title="Toggle Theme">
+                    <button id="themeToggle" class="header-btn theme-toggle" title="Toggle Theme">
                         <i class="fa-solid fa-moon"></i>
                     </button>
-                    <button class="header-btn" title="Notifications">
-                        <i class="fa-regular fa-bell"></i>
-                        <span class="badge"></span>
-                    </button>
-                    <a href="profile.html" class="user-profile">
+                    <div class="notification-container">
+                        <button id="notificationBell" class="header-btn" title="Notifications">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="badge"></span>
+                        </button>
+                        <div id="notificationDropdown" class="notification-dropdown">
+                            <div class="notification-header">
+                                <h4>Notifications</h4>
+                                <span class="text-primary text-sm font-bold" style="cursor: pointer;">Mark all as
+                                    read</span>
+                            </div>
+                            <div class="notification-list">
+                                <a href="#" class="notification-item">
+                                    <div class="notification-icon"
+                                        style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+                                        <i class="fa-solid fa-headset"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <span class="notification-title">Support Ticket</span>
+                                        <span class="notification-desc">Agent responded to your ticket regarding bin
+                                            repair.</span>
+                                        <span class="notification-time">3 hours ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="notification-footer">
+                                <a href="#" class="text-primary text-sm font-bold">View all notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-profile">
                         <div class="user-avatar" style="background: var(--secondary);">T</div>
                         <div class="user-info">
                             <span class="user-name">TechCorp HQ</span>
                             <span class="user-role">Client Portal</span>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </header>
 
-            <div class="grid grid-cols-2 gap-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="h3">Customer Support</h2>
+                <button id="newTicketBtn" class="btn btn-primary"
+                    onclick="document.getElementById('ticketModal').style.display='flex'">
+                    <i class="fa-solid fa-plus mr-2"></i> New Ticket
+                </button>
+            </div>
 
-                <!-- Contact Methods -->
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Contact Info (Sidebar on desktop) -->
                 <div class="flex flex-col gap-4">
                     <div class="card flex items-center gap-4">
                         <div
-                            style="width: 50px; height: 50px; background: rgba(5, 150, 105, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.25rem;">
+                            style="width: 48px; height: 48px; background: rgba(5, 150, 105, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.25rem;">
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <div>
-                            <h4>24/7 Hotline</h4>
-                            <p class="text-muted text-sm">Immediate assistance for urgent pickups.</p>
-                            <a href="tel:+18005550123" class="text-primary font-bold">+1 (800) 555-0123</a>
+                            <h4 style="font-size: 0.95rem;">24/7 Hotline</h4>
+                            <p class="text-muted" style="font-size: 0.8rem;">+1 (800) 555-0123</p>
                         </div>
                     </div>
 
                     <div class="card flex items-center gap-4">
                         <div
-                            style="width: 50px; height: 50px; background: rgba(5, 150, 105, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.25rem;">
+                            style="width: 48px; height: 48px; background: rgba(5, 150, 105, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.25rem;">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         <div>
-                            <h4>Email Support</h4>
-                            <p class="text-muted text-sm">Response within 24 hours.</p>
-                            <a href="mailto:support@ecotrack.com"
-                                class="text-primary font-bold">support@ecotrack.com</a>
+                            <h4 style="font-size: 0.95rem;">Email Support</h4>
+                            <p class="text-muted" style="font-size: 0.8rem;">support@ecotrack.com</p>
                         </div>
                     </div>
 
                     <div class="card">
-                        <h4 class="mb-4">Submit a Ticket</h4>
-                        <form>
-                            <div class="mb-3">
-                                <label class="form-label">Subject</label>
-                                <input type="text" class="form-input" placeholder="e.g. Missed Pickup">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Description</label>
-                                <textarea class="form-input" rows="3"></textarea>
-                            </div>
-                            <button class="btn btn-primary">Create Ticket</button>
-                        </form>
+                        <h4 style="font-size: 0.95rem;" class="mb-3">Quick Links</h4>
+                        <ul class="flex flex-col gap-2" style="list-style: none; padding: 0;">
+                            <li><a href="#" class="text-primary text-sm">Knowledge Base</a></li>
+                            <li><a href="#" class="text-primary text-sm">System Status</a></li>
+                            <li><a href="#" class="text-primary text-sm">Feedback Policy</a></li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Recent Tickets -->
-                <div class="card h-full">
-                    <h3 class="mb-4">Recent Tickets</h3>
+                <!-- Recent Tickets (Main area) -->
+                <div class="card col-span-2 h-full">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3>Recent Tickets</h3>
+                        <div class="flex gap-2">
+                            <select class="form-input text-xs" style="padding: 0.25rem 0.5rem; width: auto;">
+                                <option>All Projects</option>
+                                <option>TechCorp HQ</option>
+                                <option>Data Center</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="flex flex-col gap-3">
-                        <div class="p-3 border rounded border-gray-200">
-                            <div class="flex justify-between mb-1">
-                                <span class="font-bold">#TKT-9921 - Damaged Bin Lid</span>
-                                <span class="status-badge status-success">Resolved</span>
+                        <div
+                            class="p-4 border rounded border-gray-200 hover:bg-light transition-colors cursor-pointer ticket-row">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="font-bold">#TKT-9921 - Damaged Bin Lid</span>
+                                    </div>
+                                    <p class="text-muted text-xs">Submitted on Oct 12, 2026</p>
+                                </div>
+                                <div class="flex flex-col items-end gap-2">
+                                    <span class="status-badge status-success">Resolved</span>
+                                    <span class="project-badge">TechCorp HQ</span>
+                                </div>
                             </div>
-                            <p class="text-muted text-sm mb-2">Submitted on Oct 12, 2026</p>
-                            <div class="text-sm">
-                                Technicians replaced the lid on bin #4092.
+                            <div class="text-sm line-clamp-2">
+                                Technicians replaced the lid on bin #4092 at the main loading dock.
                             </div>
                         </div>
 
-                        <div class="p-3 border rounded border-gray-200">
-                            <div class="flex justify-between mb-1">
-                                <span class="font-bold">#TKT-9945 - Billing Inquiry</span>
-                                <span class="status-badge status-warning">Open</span>
+                        <div
+                            class="p-4 border rounded border-gray-200 hover:bg-light transition-colors cursor-pointer ticket-row">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="font-bold">#TKT-9945 - Billing Inquiry</span>
+                                    </div>
+                                    <p class="text-muted text-xs">Submitted on Oct 18, 2026</p>
+                                </div>
+                                <div class="flex flex-col items-end gap-2">
+                                    <span class="status-badge status-warning">Open</span>
+                                    <span class="project-badge">Data Center</span>
+                                </div>
                             </div>
-                            <p class="text-muted text-sm mb-2">Submitted on Oct 18, 2026</p>
-                            <div class="text-sm">
-                                Awaiting response from finance department regarding invoice #2026-009.
+                            <div class="text-sm line-clamp-2">
+                                Awaiting response from finance department regarding invoice #2026-009 for the West Wing
+                                audit.
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <!-- New Ticket Modal -->
+            <div id="ticketModal" class="modal-backdrop"
+                style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1001; align-items: center; justify-content: center;">
+                <div class="card" style="width: 500px; max-width: 95%; margin: 0; padding: 1.5rem;">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3>Create New Ticket</h3>
+                        <button onclick="document.getElementById('ticketModal').style.display='none'"
+                            style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+                    </div>
+                    <form id="ticketForm">
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="form-label">Subject</label>
+                                <input type="text" id="ticketSubject" class="form-input"
+                                    placeholder="e.g. Missed Pickup" required>
+                            </div>
+                            <div>
+                                <label class="form-label">Associated Project</label>
+                                <select id="ticketProject" class="form-input">
+                                    <option>TechCorp HQ</option>
+                                    <option>Data Center</option>
+                                    <option>Warehouse A</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Description</label>
+                            <textarea id="ticketDescription" class="form-input" rows="4"
+                                placeholder="Describe the issue in detail..." required></textarea>
+                        </div>
+                        <div class="flex gap-2">
+                            <button type="button" class="btn btn-outline flex-1"
+                                onclick="document.getElementById('ticketModal').style.display='none'">Cancel</button>
+                            <button type="submit" class="btn btn-primary flex-1">Submit Ticket</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Info Message Modal -->
+            <div id="infoModal" class="modal-backdrop"
+                style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1001; align-items: center; justify-content: center;">
+                <div class="card" style="width: 400px; max-width: 90%; margin: 0; text-align: center; padding: 2rem;">
+                    <div id="infoModalIcon" class="mb-4" style="font-size: 3rem; color: var(--primary);">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 id="infoModalTitle" class="mb-2">Success!</h3>
+                    <p id="infoModalMessage" class="text-muted mb-4">Your action was completed successfully.</p>
+                    <button class="btn btn-primary w-full close-modal">Got it</button>
+                </div>
             </div>
         </main>
     </div>
+
     <script src="../../assets/js/theme-rtl.js"></script>
+    <script src="../../assets/js/support.js"></script>
 </body>
 
 </html>

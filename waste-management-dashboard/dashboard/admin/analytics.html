@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analytics | Admin Dashboard</title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css?v=1.4">
     <link rel="stylesheet" href="../../assets/css/rtl.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -39,15 +39,12 @@
                 <a href="reports.html" class="nav-item">
                     <i class="fa-solid fa-file-invoice"></i> Reports
                 </a>
-                <div style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 1rem;">
-
-                    <a href="settings.html" class="nav-item">
-                        <i class="fa-solid fa-gear"></i> Settings
-                    </a>
-                    <a href="../../login.html" class="nav-item logout-sidebar">
-                        <i class="fa-solid fa-right-from-bracket"></i> Logout
-                    </a>
-                </div>
+                <a href="settings.html" class="nav-item">
+                    <i class="fa-solid fa-gear"></i> Settings
+                </a>
+                <a href="../../login.html" class="nav-item logout-sidebar">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </a>
             </nav>
         </aside>
 
@@ -57,26 +54,72 @@
             <header class="dashboard-header">
                 <div class="header-left">
                     <button class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
-                    <div>
-                        <h2 style="margin-bottom: 0; font-size: 1.25rem;">Performance Analytics</h2>
-                        <p class="text-muted" style="font-size: 0.85rem;">Operational metrics and sustainability goals
-                        </p>
-                    </div>
+                    <a href="../../index.html" class="dashboard-brand">
+                        <i class="fa-solid fa-leaf"></i> EcoTrack
+                    </a>
+                    <h2 class="header-title">Analytics</h2>
                 </div>
                 <div class="header-actions">
-                    <button class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
-                        Last 30 Days <i class="fa-solid fa-chevron-down ml-2"></i>
-                    </button>
-                    <button id="rtlToggle" class="header-btn" title="Toggle RTL">
+                    <button id="rtlToggle" class="header-btn rtl-toggle" title="Toggle RTL">
                         <i class="fa-solid fa-language"></i>
                     </button>
-                    <button id="themeToggle" class="header-btn" title="Toggle Theme">
+                    <button id="themeToggle" class="header-btn theme-toggle" title="Toggle Theme">
                         <i class="fa-solid fa-moon"></i>
                     </button>
-                    <button class="header-btn" title="Notifications">
-                        <i class="fa-regular fa-bell"></i>
-                        <span class="badge"></span>
-                    </button>
+                    <div class="notification-container">
+                        <button id="notificationBell" class="header-btn" title="Notifications">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="badge"></span>
+                        </button>
+                        <div id="notificationDropdown" class="notification-dropdown">
+                            <div class="notification-header">
+                                <h4>Notifications</h4>
+                                <span class="text-primary text-sm font-bold" style="cursor: pointer;">Mark all as
+                                    read</span>
+                            </div>
+                            <div class="notification-list">
+                                <a href="#" class="notification-item">
+                                    <div class="notification-icon"
+                                        style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;">
+                                        <i class="fa-solid fa-dumpster"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <span class="notification-title">Bin 75% Full</span>
+                                        <span class="notification-desc">Bin #1024 at TechCorp HQ requires pickup
+                                            soon.</span>
+                                        <span class="notification-time">5 mins ago</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="notification-item">
+                                    <div class="notification-icon"
+                                        style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+                                        <i class="fa-solid fa-route"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <span class="notification-title">Route Optimized</span>
+                                        <span class="notification-desc">New optimized route available for Team
+                                            Alpha.</span>
+                                        <span class="notification-time">1 hour ago</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="notification-item">
+                                    <div class="notification-icon"
+                                        style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+                                        <i class="fa-solid fa-triangle-exclamation"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <span class="notification-title">System Alert</span>
+                                        <span class="notification-desc">Scheduled maintenance tonight at 11:00
+                                            PM.</span>
+                                        <span class="notification-time">3 hours ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="notification-footer">
+                                <a href="#" class="text-primary text-sm font-bold">View all notifications</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="user-profile">
                         <div class="user-avatar">A</div>
                         <div class="user-info">
@@ -87,33 +130,97 @@
                 </div>
             </header>
 
-            <div class="grid grid-cols-2 mb-4">
+            <div class="flex justify-end mb-4">
+                <button id="timeRangeBtn" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                    Last 30 Days <i class="fa-solid fa-chevron-down ml-2"></i>
+                </button>
+            </div>
+
+            <div class="grid-analytics-custom mb-4"
+                style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
                 <!-- Waste Composition Chart -->
                 <div class="card">
                     <h3 class="mb-4">Total Waste Composition</h3>
-                    <div style="height: 300px;">
-                        <canvas id="compositionChart"></canvas>
+                    <div class="chart-wrapper chart-responsive-height"
+                        style="position: relative; width: 100%; display: flex; justify-content: center; align-items: center;">
+                        <div class="chart-inner" style="height: 100%; width: 100%;">
+                            <canvas id="compositionChart"></canvas>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Emissions Saved Chart -->
                 <div class="card">
                     <h3 class="mb-4">CO2 Emissions Avoided</h3>
-                    <div style="height: 300px;">
-                        <canvas id="emissionsChart"></canvas>
+                    <div class="chart-wrapper chart-responsive-height" style="position: relative; width: 100%;">
+                        <div class="chart-inner" style="height: 100%; width: 100%;">
+                            <canvas id="emissionsChart"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="card">
                 <h3 class="mb-4">Monthly Efficiency Metrics</h3>
-                <div style="height: 300px;">
-                    <canvas id="efficiencyChart"></canvas>
+                <div class="chart-wrapper chart-responsive-height" style="position: relative; width: 100%;">
+                    <div class="chart-inner" style="height: 100%; width: 100%;">
+                        <canvas id="efficiencyChart"></canvas>
+                    </div>
                 </div>
             </div>
 
+            <!-- Info Modal (Reusable) -->
+            <div id="infoModal" class="modal-backdrop"
+                style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1100; align-items: center; justify-content: center;">
+                <div class="card" style="width: 400px; max-width: 90%; margin: 0; text-align: center; padding: 2.5rem;">
+                    <div
+                        style="width: 60px; height: 60px; background: #eff6ff; color: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.75rem;">
+                        <i id="infoModalIcon" class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <h3 id="infoModalTitle" class="mb-2">Time Range</h3>
+                    <p id="infoModalMessage" class="text-muted mb-6">Action completed successfully.</p>
+                    <button type="button" class="btn btn-primary w-full close-modal">Understood</button>
+                </div>
+            </div>
         </main>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const timeRangeBtn = document.getElementById('timeRangeBtn');
+            const infoModal = document.getElementById('infoModal');
+            const closeModalBtns = document.querySelectorAll('.close-modal');
+
+            function showInfoModal(title, message, icon = 'fa-circle-check', color = '#10B981', bgColor = '#ECFDF5') {
+                if (!infoModal) return;
+                document.getElementById('infoModalTitle').textContent = title;
+                document.getElementById('infoModalMessage').textContent = message;
+                const iconEl = document.getElementById('infoModalIcon');
+                iconEl.className = `fa-solid ${icon}`;
+                iconEl.parentElement.style.color = color;
+                iconEl.parentElement.style.background = bgColor;
+                infoModal.style.display = 'flex';
+            }
+
+            if (timeRangeBtn) {
+                timeRangeBtn.addEventListener('click', () => {
+                    showInfoModal('Select Time Range', 'Custom time range selection (7D, 30D, 90D, Custom) is being prepared. Displaying data for the default "Last 30 Days" period.', 'fa-calendar-day', '#3b82f6', '#eff6ff');
+                });
+            }
+
+            closeModalBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (infoModal) infoModal.style.display = 'none';
+                });
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === infoModal) {
+                    infoModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
     <script>
         // Composition Chart
@@ -128,7 +235,27 @@
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            usePointStyle: true,
+                            boxWidth: 8,
+                            padding: 10,
+                            font: {
+                                size: window.innerWidth < 640 ? 11 : 12
+                            }
+                        }
+                    }
+                },
+                layout: {
+                    padding: {
+                        top: 0,
+                        bottom: 0,
+                        left: 80
+                    }
+                }
             }
         });
 
@@ -172,6 +299,7 @@
             }
         });
     </script>
+
     <script src="../../assets/js/theme-rtl.js"></script>
 </body>
 

@@ -17,8 +17,14 @@
             <a href="index.html" class="brand">
                 <i class="fa-solid fa-leaf"></i> EcoTrack
             </a>
-            <div class="mobile-menu-btn hidden-on-desktop">
-                <i class="fa-solid fa-bars"></i>
+            <div class="navbar-actions">
+                <button class="btn btn-outline theme-toggle" style="border:none; padding: 0.5rem; margin: 0;"><i
+                        class="fa-solid fa-moon"></i></button>
+                <button class="btn btn-outline rtl-toggle" style="border:none; padding: 0.5rem; margin: 0;"><i
+                        class="fa-solid fa-right-left"></i></button>
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
             <div class="nav-menu" id="navMenu">
                 <a href="index.html" class="nav-item-link">Home</a>
@@ -29,12 +35,11 @@
                 <a href="pricing.html" class="nav-item-link">Pricing</a>
                 <a href="contact.html" class="nav-item-link">Contact</a>
                 <div class="nav-spacer"></div>
-                <a href="login.html" class="btn btn-outline">Client Login <i class="fa-regular fa-user"></i></a>
-                <button id="themeToggle" class="btn btn-outline"
-                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i class="fa-solid fa-moon"></i></button>
-                <button id="rtlToggle" class="btn btn-outline"
-                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i
+                <button class="btn btn-outline theme-toggle" style="border:none; padding: 0.5rem; margin: 0 0.5rem;"><i
+                        class="fa-solid fa-moon"></i></button>
+                <button class="btn btn-outline rtl-toggle" style="border:none; padding: 0.5rem; margin: 0 0.5rem;"><i
                         class="fa-solid fa-right-left"></i></button>
+                <a href="login.html" class="btn btn-outline">Login <i class="fa-regular fa-user"></i></a>
             </div>
         </div>
     </nav>
@@ -42,62 +47,30 @@
     <!-- Page Title -->
     <header style="background: var(--dark); color: white; padding: 4rem 0;">
         <div class="container">
-            <h1 class="display-2 mb-4" style="color: white;">Commercial Waste Collection</h1>
-            <p style="color: #9CA3AF;">Home / Services / Commercial Waste</p>
+            <h1 class="display-2 mb-4" id="service-title" style="color: white;">Loading...</h1>
+            <p id="service-breadcrumb" style="color: #9CA3AF;">Home / Services / ...</p>
         </div>
     </header>
 
     <div class="container grid" style="grid-template-columns: 2fr 1fr; gap: 3rem; padding: 5rem 1.5rem;">
 
         <!-- Main Content -->
-        <div>
-            <img src="assets/img/blog/expansion-seattle.png" alt="Service Image"
+        <div id="service-content">
+            <img id="service-image" src="" alt="Service Image"
                 style="width: 100%; height: 400px; border-radius: var(--radius-lg); object-fit: cover; margin-bottom: 2rem;">
 
-            <h2 class="mb-4">Sustainable Solutions for Your Business</h2>
-            <p class="mb-4 text-muted">A clean business environment is essential for success. EcoTrack offers
-                comprehensive commercial waste services tailored to your specific industry needs, whether you operate a
-                retail store, office building, restaurant, or manufacturing facility.</p>
-            <p class="mb-4 text-muted">Our fleet consists of modern, low-emission trucks equipped with smart routing
-                technology to ensure reliable pickups and minimal environmental impact.</p>
+            <div id="service-description">
+                <!-- Javascript will populate this -->
+            </div>
 
             <h3 class="mt-4 mb-4">Key Benefits</h3>
-            <div class="grid grid-cols-2 mb-4">
-                <div class="flex gap-2">
-                    <i class="fa-solid fa-check text-primary"></i>
-                    <span>Customized pickup schedules</span>
-                </div>
-                <div class="flex gap-2">
-                    <i class="fa-solid fa-check text-primary"></i>
-                    <span>Waste audit & optimization</span>
-                </div>
-                <div class="flex gap-2">
-                    <i class="fa-solid fa-check text-primary"></i>
-                    <span>Compliance reporting</span>
-                </div>
-                <div class="flex gap-2">
-                    <i class="fa-solid fa-check text-primary"></i>
-                    <span>24/7 Customer support</span>
-                </div>
+            <div id="service-benefits" class="grid grid-cols-2 mb-4">
+                <!-- Javascript will populate this -->
             </div>
 
             <h3 class="mt-4 mb-4">Frequently Asked Questions</h3>
-            <div style="display: flex; flex-direction: column; gap: 1rem;">
-                <details style="border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem;">
-                    <summary style="font-weight: 600; cursor: pointer;">How do I determine the right bin size?</summary>
-                    <p class="text-muted mt-2">Our waste consultants will perform a free audit of your operational
-                        output to recommend the most cost-effective bin sizes and pickup frequency.</p>
-                </details>
-                <details style="border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem;">
-                    <summary style="font-weight: 600; cursor: pointer;">What materials are prohibited?</summary>
-                    <p class="text-muted mt-2">Hazardous materials, electronics, and medical waste cannot be placed in
-                        standard commercial bins. Please see our centralized disposal services for these items.</p>
-                </details>
-                <details style="border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem;">
-                    <summary style="font-weight: 600; cursor: pointer;">Can I change my schedule?</summary>
-                    <p class="text-muted mt-2">Yes, you can adjust your pickup schedule instantly through our Client
-                        Portal.</p>
-                </details>
+            <div id="service-faqs" style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- Javascript will populate this -->
             </div>
         </div>
 
@@ -106,18 +79,24 @@
             <div class="card mb-4" style="background: var(--light);">
                 <h3 class="mb-4">Other Services</h3>
                 <ul class="flex flex-col gap-2">
-                    <li><a href="#"
+                    <li><a href="service-details.html?id=commercial"
+                            style="display: block; padding: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text-muted);">Commercial
+                            Waste</a></li>
+                    <li><a href="service-details.html?id=recycling"
                             style="display: block; padding: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text-muted);">Recycling
                             Programs</a></li>
-                    <li><a href="#"
+                    <li><a href="service-details.html?id=hazardous"
                             style="display: block; padding: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text-muted);">Hazardous
                             Waste</a></li>
-                    <li><a href="#"
+                    <li><a href="service-details.html?id=construction"
                             style="display: block; padding: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text-muted);">Construction
                             Debris</a></li>
-                    <li><a href="#"
+                    <li><a href="service-details.html?id=organic"
                             style="display: block; padding: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text-muted);">Organic
                             Composting</a></li>
+                    <li><a href="service-details.html?id=consultancy"
+                            style="display: block; padding: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text-muted);">Waste
+                            Consultancy</a></li>
                 </ul>
             </div>
 
@@ -187,10 +166,195 @@
         <div class="container"
             style="border-top: 1px solid #374151; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.8rem;">
             &copy; 2026 EcoTrack Solutions. All rights reserved.
+            <br>
+            Powered by <a href="https://www.abhivorn.com/" target="_blank"
+                style="color: #6c757d; text-decoration: none;">AbhiVorn Technologies Pvt. Ltd.</a>
         </div>
     </footer>
 
     <script src="assets/js/theme-rtl.js"></script>
+    <script>
+        const servicesData = {
+            commercial: {
+                title: "Commercial Waste Collection",
+                breadcrumb: "Home / Services / Commercial Waste",
+                image: "assets/img/blog/expansion-seattle.png",
+                description: [
+                    "A clean business environment is essential for success. EcoTrack offers comprehensive commercial waste services tailored to your specific industry needs, whether you operate a retail store, office building, restaurant, or manufacturing facility.",
+                    "Our fleet consists of modern, low-emission trucks equipped with smart routing technology to ensure reliable pickups and minimal environmental impact."
+                ],
+                benefits: [
+                    "Customized pickup schedules",
+                    "Waste audit & optimization",
+                    "Compliance reporting",
+                    "24/7 Customer support"
+                ],
+                faqs: [
+                    { q: "How do I determine the right bin size?", a: "Our waste consultants will perform a free audit of your operational output to recommend the most cost-effective bin sizes and pickup frequency." },
+                    { q: "What materials are prohibited?", a: "Hazardous materials, electronics, and medical waste cannot be placed in standard commercial bins. Please see our centralized disposal services for these items." },
+                    { q: "Can I change my schedule?", a: "Yes, you can adjust your pickup schedule instantly through our Client Portal." }
+                ]
+            },
+            recycling: {
+                title: "Recycling Programs",
+                breadcrumb: "Home / Services / Recycling Programs",
+                image: "assets/img/blog/recycling-mistakes.png",
+                description: [
+                    "Maximize your diverted waste and meet sustainability goals with our single-stream recycling programs. We make it easy for your business to recycle paper, cardboard, plastics, and metals without the hassle of sorting.",
+                    "Our advanced sorting facilities ensure that a high percentage of collected materials are processed and reintroduced into the manufacturing supply chain."
+                ],
+                benefits: [
+                    "Single-stream convenience",
+                    "Diversion reporting",
+                    "Reduced landfill costs",
+                    "Sustainability certification"
+                ],
+                faqs: [
+                    { q: "What can be recycled?", a: "We accept paper, cardboard, aluminum cans, and plastics #1, #2, and #5. Glass is collected separately in some regions." },
+                    { q: "Do I need to clean the items?", a: "Items should be relatively clean and dry. A quick rinse is usually sufficient." },
+                    { q: "How is contamination handled?", a: "We use AI-powered sorting to remove contaminants, but high contamination rates may result in additional fees." }
+                ]
+            },
+            hazardous: {
+                title: "Hazardous Waste Disposal",
+                breadcrumb: "Home / Services / Hazardous Waste",
+                image: "assets/img/blog/ai-sorting.png",
+                description: [
+                    "Proper disposal of hazardous materials is critical for safety and regulatory compliance. We provide specialized handling for chemical, medical, and electronic waste.",
+                    "Our certified team ensures that all hazardous materials are transported, treated, and disposed of in strict accordance with local, state, and federal regulations."
+                ],
+                benefits: [
+                    "EPA compliant methods",
+                    "Manifest tracking",
+                    "Chemical profiling",
+                    "Emergency spill response"
+                ],
+                faqs: [
+                    { q: "What counts as hazardous waste?", a: "This includes solvents, paints, batteries, fluorescent bulbs, pesticides, and medical waste." },
+                    { q: "Do you provide containers?", a: "Yes, we provide DOT-approved drums and containers for safe storage and transport." },
+                    { q: "Is documentation provided?", a: "Absolutely. We provide full manifest tracking and certificates of disposal for your records." }
+                ]
+            },
+            construction: {
+                title: "Construction Debris",
+                breadcrumb: "Home / Services / Construction Debris",
+                image: "assets/img/history.png",
+                description: [
+                    "Keep your job site clean and safe with our roll-off dumpster rentals. We offer a variety of sizes to handle debris from renovations, new construction, and demolition projects.",
+                    "We prioritize recycling construction and demolition (C&D) debris, diverting materials like concrete, wood, and drywall from landfills whenever possible."
+                ],
+                benefits: [
+                    "Various dumpster sizes",
+                    "Same-day delivery",
+                    "LEED documentation",
+                    "Heavy load capacity"
+                ],
+                faqs: [
+                    { q: "What sizes are available?", a: "We offer 10, 20, 30, and 40-yard roll-off dumpsters." },
+                    { q: "What can go in the dumpster?", a: "Standard C&D debris like wood, drywall, concrete, and roofing. No hazardous waste or tires." },
+                    { q: "How long can I keep the dumpster?", a: "Standard rental periods are 14 days, but extensions are available upon request." }
+                ]
+            },
+            organic: {
+                title: "Organic Composting",
+                breadcrumb: "Home / Services / Organic Composting",
+                image: "assets/img/blog/recycling-mistakes.png",
+                description: [
+                    "Transform your food scraps and yard waste into nutrient-rich soil. Our commercial composting program is perfect for restaurants, grocery stores, and corporate campuses.",
+                    "Diverting organic waste significantly reduces methane emissions from landfills and supports local agriculture through the production of high-quality compost."
+                ],
+                benefits: [
+                    "Odor-controlled bins",
+                    "Staff training provided",
+                    "Methane reduction",
+                    "Support local farming"
+                ],
+                faqs: [
+                    { q: "What is accepted?", a: "Fruit and vegetable scraps, meat, dairy, bones, coffee grounds, and compostable packaging." },
+                    { q: "Will it smell?", a: "Our bins are designed to minimize odors, and we recommend frequent pickups for food waste." },
+                    { q: "Is compostable plastic allowed?", a: "Only BPI-certified compostable products are accepted in our organic stream." }
+                ]
+            },
+            consultancy: {
+                title: "Waste Consultancy",
+                breadcrumb: "Home / Services / Waste Consultancy",
+                image: "assets/img/careers-hero.png",
+                description: [
+                    "Analyze your waste streams to uncover savings and improve rigorous sustainability performance. Our experts conduct detailed audits to identify inefficiencies using data-driven insights.",
+                    "We help you design and implement comprehensive waste management plans that align with your corporate sustainability goals and budget."
+                ],
+                benefits: [
+                    "Detailed waste audits",
+                    "Cost reduction strategies",
+                    "ESG reporting support",
+                    "Supplier negotiation"
+                ],
+                faqs: [
+                    { q: "How much can we save?", a: "Clients typically see a 15-30% reduction in waste management costs after implementing our recommendations." },
+                    { q: "How long does an audit take?", a: "Depending on facility size, an onsite audit takes 1-3 days, with a full report delivered within two weeks." },
+                    { q: "Do you help with implementation?", a: "Yes, we support the rollout of new programs, including staff training and signage." }
+                ]
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const serviceId = params.get('id') || 'commercial'; // Default to commercial if no param
+        const content = servicesData[serviceId] || servicesData['commercial']; // Default to commercial if invalid param
+
+        // Update Title and Breadcrumb
+        document.getElementById('service-title').textContent = content.title;
+        document.getElementById('service-breadcrumb').textContent = content.breadcrumb;
+
+        // Update Image
+        document.getElementById('service-image').src = content.image;
+        document.getElementById('service-image').alt = content.title;
+
+        // Update Description
+        const descContainer = document.getElementById('service-description');
+        descContainer.innerHTML = '';
+        content.description.forEach(para => {
+            const p = document.createElement('p');
+            p.className = 'mb-4 text-muted';
+            p.textContent = para;
+            descContainer.appendChild(p);
+        });
+
+        // Update Benefits
+        const benefitsContainer = document.getElementById('service-benefits');
+        benefitsContainer.innerHTML = '';
+        content.benefits.forEach(benefit => {
+            const div = document.createElement('div');
+            div.className = 'flex gap-2';
+            div.innerHTML = `<i class="fa-solid fa-check text-primary"></i><span>${benefit}</span>`;
+            benefitsContainer.appendChild(div);
+        });
+
+        // Update FAQs
+        const faqsContainer = document.getElementById('service-faqs');
+        faqsContainer.innerHTML = '';
+        content.faqs.forEach(faq => {
+            const details = document.createElement('details');
+            details.style.cssText = 'border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem;';
+            details.innerHTML = `
+                <summary style="font-weight: 600; cursor: pointer;">${faq.q}</summary>
+                <p class="text-muted mt-2">${faq.a}</p>
+            `;
+            faqsContainer.appendChild(details);
+        });
+    </script>
+
+    <footer style="background-color: #1F2937; padding: 2rem 0; margin-top: 4rem;">
+        <div class="container"
+            style="color: #6B7280; font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>&copy; 2026 EcoTrack Solutions. All rights reserved.</div>
+            <div>
+                Powered by <a href="https://www.abhivorn.com/" target="_blank"
+                    style="color: #6c757d; text-decoration: none; transition: color 0.3s;"
+                    onmouseover="this.style.color='#0d6efd'" onmouseout="this.style.color='#6c757d'">AbhiVorn
+                    Technologies Pvt. Ltd.</a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

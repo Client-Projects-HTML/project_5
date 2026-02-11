@@ -1,82 +1,54 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     // Theme Toggle
-    const toggleBtn = document.getElementById('themeToggle');
+    const themeToggles = document.querySelectorAll('.theme-toggle');
     const body = document.body;
+
+    function updateThemeIcons() {
+        const isDark = body.classList.contains('dark');
+        themeToggles.forEach(btn => {
+            btn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+        });
+    }
 
     // Check local storage for theme
     if (localStorage.getItem('theme') === 'dark') {
         body.classList.add('dark');
-        if (toggleBtn) toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
     }
+    updateThemeIcons();
 
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', () => {
+    themeToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
             body.classList.toggle('dark');
-            if (body.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-                toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-            } else {
-                localStorage.setItem('theme', 'light');
-                toggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
-            }
+            const isDark = body.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeIcons();
         });
-    }
+    });
 
     // RTL Toggle and Word Reversal Logic
-    const rtlBtn = document.getElementById('rtlToggle');
+    const rtlToggles = document.querySelectorAll('.rtl-toggle');
     const html = document.documentElement;
 
-    function reverseAllText() {
-        // Function to reverse characters in a string while preserving word structure
-        const reverseWordChars = (str) => {
-            return str.split(' ').map(word => word.split('').reverse().join('')).join(' ');
-        };
-
-        const walker = document.createTreeWalker(
-            document.body,
-            NodeFilter.SHOW_TEXT,
-            {
-                acceptNode: function (node) {
-                    // Skip scripts, styles, and empty nodes
-                    const parent = node.parentElement.tagName.toLowerCase();
-                    if (parent === 'script' || parent === 'style' || parent === 'i') {
-                        return NodeFilter.FILTER_REJECT;
-                    }
-                    return node.textContent.trim().length > 0 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
-                }
-            }
-        );
-
-        let node;
-        while (node = walker.nextNode()) {
-            node.textContent = reverseWordChars(node.textContent);
-        }
-    }
 
     // Check local storage for direction
     if (localStorage.getItem('direction') === 'rtl') {
         html.setAttribute('dir', 'rtl');
-        reverseAllText();
     } else {
         html.setAttribute('dir', 'ltr');
     }
 
-    if (rtlBtn) {
-        rtlBtn.innerHTML = '<i class="fa-solid fa-right-left"></i>';
-
-        rtlBtn.addEventListener('click', () => {
-            if (html.getAttribute('dir') === 'rtl') {
+    rtlToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const isRtl = html.getAttribute('dir') === 'rtl';
+            if (isRtl) {
                 html.setAttribute('dir', 'ltr');
                 localStorage.setItem('direction', 'ltr');
-                reverseAllText(); // Reverse back to normal
             } else {
                 html.setAttribute('dir', 'rtl');
                 localStorage.setItem('direction', 'rtl');
-                reverseAllText(); // Apply reversal
             }
         });
-    }
+    });
 
     // Mobile Menu Toggle
     const menuBtn = document.querySelector('.mobile-menu-btn');
@@ -84,11 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuBtn && navMenu) {
         menuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+            const isActive = navMenu.classList.toggle('active');
+
+            // Toggle body scroll
+            document.body.style.overflow = isActive ? 'hidden' : '';
 
             // Toggle icon
             const icon = menuBtn.querySelector('i');
-            if (navMenu.classList.contains('active')) {
+            if (isActive) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-xmark');
             } else {
@@ -102,19 +77,100 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarToggle = document.querySelector('.sidebar-toggle');
     const sidebar = document.querySelector('.sidebar');
 
-    if (sidebarToggle && sidebar) {
-        sidebarToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
+
+    // Notification Dropdown Logic
+    const bellBtn = document.getElementById('notificationBell');
+    const notificationDropdown = document.getElementById('notificationDropdown');
+
+    if (bellBtn && notificationDropdown) {
+        bellBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            notificationDropdown.classList.toggle('active');
+        });
+    }
+
+    // Global click listener to close sidebars and dropdowns
+    document.addEventListener('click', (e) => {
+        // Close sidebar on mobile
+        if (window.innerWidth <= 1024 &&
+            sidebar && sidebar.classList.contains('active') &&
+            !sidebar.contains(e.target) &&
+            !sidebarToggle.contains(e.target)) {
+            sidebar.classList.remove('active');
+        }
+
+        // Close notification dropdown
+        if (notificationDropdown &&
+            notificationDropdown.classList.contains('active') &&
+            !notificationDropdown.contains(e.target) &&
+            !bellBtn.contains(e.target)) {
+            notificationDropdown.classList.remove('active');
+        }
+    });
+
+    // Sidebar Close functionality (optional but good for UX)
+    const closeModalBtns = document.querySelectorAll('.close-modal');
+    closeModalBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const modal = btn.closest('.modal-backdrop');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+
+    // Dashboard Sidebar Toggle With Overlay
+    const mainContent = document.querySelector('.main-content');
+
+    if (sidebar && sidebarToggle) {
+        // Create Overlay if not exists
+        let overlay = document.querySelector('.sidebar-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'sidebar-overlay';
+            // Add styles dynamically or assume in CSS (better to add in CSS if possible, but JS for now to ensure)
+            overlay.style.position = 'fixed';
+            overlay.style.inset = '0';
+            overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+            overlay.style.zIndex = '1050';
+            overlay.style.display = 'none';
+            overlay.style.opacity = '0';
+            overlay.style.transition = 'opacity 0.3s';
+            document.body.appendChild(overlay);
+        }
+
+        function toggleSidebar() {
+            const isActive = sidebar.classList.toggle('active');
+
+            if (isActive) {
+                overlay.style.display = 'block';
+                setTimeout(() => overlay.style.opacity = '1', 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    if (!sidebar.classList.contains('active')) {
+                        overlay.style.display = 'none';
+                    }
+                }, 300);
+                document.body.style.overflow = '';
+            }
+        }
+
+        sidebarToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleSidebar();
         });
 
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 1024 &&
-                sidebar.classList.contains('active') &&
-                !sidebar.contains(e.target) &&
-                !sidebarToggle.contains(e.target)) {
-                sidebar.classList.remove('active');
-            }
+        overlay.addEventListener('click', () => {
+            if (sidebar.classList.contains('active')) toggleSidebar();
+        });
+
+        // Close sidebar on route change / link click (optional)
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 1024) toggleSidebar();
+            });
         });
     }
 });

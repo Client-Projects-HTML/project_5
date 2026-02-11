@@ -14,10 +14,14 @@
     style="background: linear-gradient(135deg, var(--primary) 0%, #047857 100%); color: white; display: flex; flex-direction: column; min-height: 100vh;">
 
     <div style="position: absolute; top: 1rem; right: 1rem; display: flex; gap: 0.5rem;">
-        <button id="themeToggle" class="btn btn-outline" style="border-color: white; color: white; padding: 0.5rem;"><i
-                class="fa-solid fa-moon"></i></button>
-        <button id="rtlToggle" class="btn btn-outline" style="border-color: white; color: white; padding: 0.5rem;"><i
-                class="fa-solid fa-right-left"></i></button>
+        <button id="themeToggle" class="theme-toggle"
+            style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: white; opacity: 0.8;">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="rtlToggle" class="rtl-toggle"
+            style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: white; opacity: 0.8;">
+            <i class="fa-solid fa-language"></i>
+        </button>
     </div>
 
     <div style="flex: 1; display: flex; align-items: center; justify-content: center; text-align: center;">
@@ -64,9 +68,19 @@
         </div>
     </div>
 
-    <footer style="padding: 2rem; text-align: center; font-size: 0.85rem; opacity: 0.8;">
-        &copy; 2026 EcoTrack Solutions. All Rights Reserved.
+    <footer
+        style="padding: 2rem; font-size: 0.85rem; opacity: 0.8; display: flex; justify-content: space-between; align-items: center;">
+        <div class="container" style="display: flex; justify-content: space-between; width: 100%;">
+            <div>&copy; 2026 EcoTrack Solutions. All Rights Reserved.</div>
+            <div>
+                Powered by <a href="https://www.abhivorn.com/" target="_blank"
+                    style="color: white; text-decoration: none; transition: color 0.3s;"
+                    onmouseover="this.style.color='#0d6efd'" onmouseout="this.style.color='white'">AbhiVorn Technologies
+                    Pvt. Ltd.</a>
+            </div>
+        </div>
     </footer>
+
 
     <script src="assets/js/theme-rtl.js"></script>
 </body>

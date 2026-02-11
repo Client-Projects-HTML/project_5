@@ -18,8 +18,14 @@
             <a href="index.html" class="brand">
                 <i class="fa-solid fa-leaf"></i> EcoTrack
             </a>
-            <div class="mobile-menu-btn hidden-on-desktop">
-                <i class="fa-solid fa-bars"></i>
+            <div class="navbar-actions">
+                <button class="btn btn-outline theme-toggle" style="border:none; padding: 0.5rem; margin: 0;"><i
+                        class="fa-solid fa-moon"></i></button>
+                <button class="btn btn-outline rtl-toggle" style="border:none; padding: 0.5rem; margin: 0;"><i
+                        class="fa-solid fa-right-left"></i></button>
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
             <div class="nav-menu" id="navMenu">
                 <a href="index.html" class="nav-item-link">Home</a>
@@ -30,95 +36,94 @@
                 <a href="pricing.html" class="nav-item-link">Pricing</a>
                 <a href="contact.html" class="nav-item-link">Contact</a>
                 <div class="nav-spacer"></div>
-                <a href="login.html" class="btn btn-outline">Client Login <i class="fa-regular fa-user"></i></a>
-                <button id="themeToggle" class="btn btn-outline"
-                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i class="fa-solid fa-moon"></i></button>
-                <button id="rtlToggle" class="btn btn-outline"
-                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i
+                <button class="btn btn-outline theme-toggle" style="border:none; padding: 0.5rem; margin: 0 0.5rem;"><i
+                        class="fa-solid fa-moon"></i></button>
+                <button class="btn btn-outline rtl-toggle" style="border:none; padding: 0.5rem; margin: 0 0.5rem;"><i
                         class="fa-solid fa-right-left"></i></button>
+                <a href="login.html" class="btn btn-outline">Login <i class="fa-regular fa-user"></i></a>
             </div>
         </div>
     </nav>
 
-    <header style="background: var(--light); padding: 4rem 0; text-align: center;">
+    <header style="background: var(--light); padding: 2rem 0; text-align: center;">
         <div class="container">
             <h1 class="display-2 mb-4">Waste Management Services</h1>
             <p class="text-lead">Tailored solutions for residential, commercial, and industrial needs.</p>
         </div>
     </header>
 
-    <section class="container" style="padding: 5rem 1.5rem;">
+    <section class="container" style="padding: 1.5rem 1.5rem;">
         <div class="grid grid-cols-3">
             <!-- Service 1 -->
             <div class="card">
-                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
                     <img src="assets/img/blog/expansion-seattle.png" alt="Commercial Waste"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3>Commercial Waste</h3>
-                <p class="text-muted mb-4">Reliable pickup schedules for businesses of all sizes. Includes dumpster
+                <p class="text-muted mb-2">Reliable pickup schedules for businesses of all sizes. Includes dumpster
                     rental and maintenance.</p>
-                <a href="service-details.html" class="btn btn-outline w-full">Learn More</a>
+                <a href="service-details.html?id=commercial" class="btn btn-outline w-full">Learn More</a>
             </div>
 
             <!-- Service 2 -->
             <div class="card">
-                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
                     <img src="assets/img/blog/recycling-mistakes.png" alt="Recycling Programs"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3>Recycling Programs</h3>
-                <p class="text-muted mb-4">Single-stream recycling services to help your business meet sustainability
+                <p class="text-muted mb-2">Single-stream recycling services to help your business meet sustainability
                     goals and regulations.</p>
-                <a href="service-details.html" class="btn btn-outline w-full">Learn More</a>
+                <a href="service-details.html?id=recycling" class="btn btn-outline w-full">Learn More</a>
             </div>
 
             <!-- Service 3 -->
             <div class="card">
-                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
                     <img src="assets/img/blog/ai-sorting.png" alt="Hazardous Waste"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3>Hazardous Waste</h3>
-                <p class="text-muted mb-4">Safe, compliant disposal of chemical, medical, and electronic waste
+                <p class="text-muted mb-2">Safe, compliant disposal of chemical, medical, and electronic waste
                     materials.</p>
-                <a href="service-details.html" class="btn btn-outline w-full">Learn More</a>
+                <a href="service-details.html?id=hazardous" class="btn btn-outline w-full">Learn More</a>
             </div>
 
             <!-- Service 4 -->
             <div class="card">
-                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
                     <img src="assets/img/history.png" alt="Construction Debris"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3>Construction Debris</h3>
-                <p class="text-muted mb-4">Roll-off dumpster rentals for construction sites, renovations, and large
+                <p class="text-muted mb-2">Roll-off dumpster rentals for construction sites, renovations, and large
                     cleanouts.</p>
-                <a href="service-details.html" class="btn btn-outline w-full">Learn More</a>
+                <a href="service-details.html?id=construction" class="btn btn-outline w-full">Learn More</a>
             </div>
 
             <!-- Service 5 -->
             <div class="card">
-                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
                     <img src="assets/img/blog/recycling-mistakes.png" alt="Organic Composting"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3>Organic Composting</h3>
-                <p class="text-muted mb-4">Turn food scraps and yard waste into nutrient-rich soil with our composting
+                <p class="text-muted mb-2">Turn food scraps and yard waste into nutrient-rich soil with our composting
                     program.</p>
-                <a href="service-details.html" class="btn btn-outline w-full">Learn More</a>
+                <a href="service-details.html?id=organic" class="btn btn-outline w-full">Learn More</a>
             </div>
 
             <!-- Service 6 -->
             <div class="card">
-                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
                     <img src="assets/img/careers-hero.png" alt="Waste Consultancy"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3>Waste Consultancy</h3>
-                <p class="text-muted mb-4">Expert audits to optimize your waste streams and reduce operational costs.
+                <p class="text-muted mb-2">Expert audits to optimize your waste streams and reduce operational costs.
                 </p>
-                <a href="service-details.html" class="btn btn-outline w-full">Learn More</a>
+                <a href="service-details.html?id=consultancy" class="btn btn-outline w-full">Learn More</a>
             </div>
         </div>
     </section>
@@ -177,10 +182,17 @@
             </div>
         </div>
         <div class="container"
-            style="border-top: 1px solid #374151; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.8rem;">
-            &copy; 2026 EcoTrack Solutions. All rights reserved.
+            style="border-top: 1px solid #374151; margin-top: 3rem; padding-top: 1.5rem; color: #6B7280; font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>&copy; 2026 EcoTrack Solutions. All rights reserved.</div>
+            <div>
+                Powered by <a href="https://www.abhivorn.com/" target="_blank"
+                    style="color: #6c757d; text-decoration: none; transition: color 0.3s;"
+                    onmouseover="this.style.color='#0d6efd'" onmouseout="this.style.color='#6c757d'">AbhiVorn
+                    Technologies Pvt. Ltd.</a>
+            </div>
         </div>
     </footer>
+
 
     <script src="assets/js/theme-rtl.js"></script>
 </body>

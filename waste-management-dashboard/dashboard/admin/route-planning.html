@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/rtl.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <style>
         .route-item {
             position: relative;
@@ -87,9 +89,6 @@
                     <a href="settings.html" class="nav-item">
                         <i class="fa-solid fa-gear"></i> Settings
                     </a>
-                    <a href="../../login.html" class="nav-item logout-sidebar">
-                        <i class="fa-solid fa-right-from-bracket"></i> Logout
-                    </a>
                 </div>
             </nav>
         </aside>
@@ -100,29 +99,48 @@
             <header class="dashboard-header">
                 <div class="header-left">
                     <button class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
-                    <div>
-                        <h2 style="margin-bottom: 0; font-size: 1.25rem;">Route Optimization</h2>
-                        <p class="text-muted" style="font-size: 0.85rem;">Manage daily pickup routes and assignments</p>
-                    </div>
+                    <a href="../../index.html" class="dashboard-brand">
+                        <i class="fa-solid fa-leaf"></i> EcoTrack
+                    </a>
+                    <h2 class="header-title">Route Planning</h2>
                 </div>
                 <div class="header-actions">
-                    <div class="flex gap-2">
-                        <button class="btn btn-outline"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">History</button>
-                        <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Optimize
-                        </button>
-                    </div>
-                    <button id="rtlToggle" class="header-btn" title="Toggle RTL">
+                    <button id="rtlToggle" class="header-btn rtl-toggle" title="Toggle RTL">
                         <i class="fa-solid fa-language"></i>
                     </button>
-                    <button id="themeToggle" class="header-btn" title="Toggle Theme">
+                    <button id="themeToggle" class="header-btn theme-toggle" title="Toggle Theme">
                         <i class="fa-solid fa-moon"></i>
                     </button>
-                    <button class="header-btn" title="Notifications">
-                        <i class="fa-regular fa-bell"></i>
-                        <span class="badge"></span>
-                    </button>
+                    <div class="notification-container">
+                        <button id="notificationBell" class="header-btn" title="Notifications">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="badge"></span>
+                        </button>
+                        <div id="notificationDropdown" class="notification-dropdown">
+                            <div class="notification-header">
+                                <h4>Notifications</h4>
+                                <span class="text-primary text-sm font-bold" style="cursor: pointer;">Mark all as
+                                    read</span>
+                            </div>
+                            <div class="notification-list">
+                                <a href="#" class="notification-item">
+                                    <div class="notification-icon"
+                                        style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+                                        <i class="fa-solid fa-route"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <span class="notification-title">Route Optimized</span>
+                                        <span class="notification-desc">New optimized route available for Team
+                                            Alpha.</span>
+                                        <span class="notification-time">1 hour ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="notification-footer">
+                                <a href="#" class="text-primary text-sm font-bold">View all notifications</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="user-profile">
                         <div class="user-avatar">A</div>
                         <div class="user-info">
@@ -132,6 +150,17 @@
                     </div>
                 </div>
             </header>
+
+            <div class="scrollable-card-body mb-4">
+                <div class="flex justify-end gap-2" style="min-width: max-content;">
+                    <button id="routeHistoryBtn" class="btn btn-outline"
+                        style="padding: 0.5rem 1rem; font-size: 0.85rem;">History</button>
+                    <button id="autoOptimizeBtn" class="btn btn-primary"
+                        style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Optimize
+                    </button>
+                </div>
+            </div>
 
             <div class="grid grid-cols-3">
 
@@ -232,33 +261,46 @@
                     </div>
                 </div>
 
-                <!-- Map Placeholder -->
+                <!-- Interactive Map -->
                 <div style="grid-column: span 2;">
-                    <div class="card"
-                        style="height: 600px; padding: 0; overflow: hidden; position: relative; background: var(--surface);">
-                        <!-- Placeholder Map UI -->
-                        <div
-                            style="position: absolute; top: 1rem; right: 1rem; z-index: 10; background: var(--surface); padding: 0.5rem; border-radius: 4px; box-shadow: var(--shadow-md); border: 1px solid var(--border);">
-                            <div class="flex gap-2 items-center text-sm" style="color: var(--text-main);">
-                                <div
-                                    style="width: 10px; height: 10px; background: var(--info, #3b82f6); border-radius: 50%;">
-                                </div> Traffic
+                    <div class="card map-container" style="padding: 0; overflow: hidden; position: relative;">
+                        <!-- Map Legend Overlay -->
+                        <div class="scrollable-card-body"
+                            style="position: absolute; top: 1rem; right: 1rem; z-index: 1000; background: var(--surface); padding: 0.5rem; border-radius: 4px; box-shadow: var(--shadow-md); border: 1px solid var(--border); max-width: 151px;">
+                            <div class="flex gap-2 items-center text-sm"
+                                style="color: var(--text-main); white-space: nowrap;">
+                                <div style="width: 10px; height: 10px; background: #3b82f6; border-radius: 50%;">
+                                </div> Active Routes
                                 <div style="width: 10px; height: 10px; background: var(--primary); border-radius: 50%;">
                                 </div> Trucks
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-center h-full flex-col text-muted">
-                            <i class="fa-solid fa-map-location-dot" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                            <p>Interactive Map Integration Here</p>
-                        </div>
+                        <div id="map" style="height: 100%; width: 100%; z-index: 1;"></div>
                     </div>
                 </div>
 
             </div>
+            <!-- Info Modal (Reusable) -->
+            <div id="infoModal" class="modal-backdrop"
+                style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1100; align-items: center; justify-content: center;">
+                <div class="card" style="width: 400px; max-width: 90%; margin: 0; text-align: center; padding: 2.5rem;">
+                    <div
+                        style="width: 60px; height: 60px; background: #ECFDF5; color: #10B981; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.75rem;">
+                        <i id="infoModalIcon" class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 id="infoModalTitle" class="mb-2">Success!</h3>
+                    <p id="infoModalMessage" class="text-muted mb-6">Action completed successfully.</p>
+                    <button type="button" class="btn btn-primary w-full close-modal">Understood</button>
+                </div>
+            </div>
         </main>
     </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="../../assets/js/theme-rtl.js"></script>
+    <script src="../../assets/js/route-planning.js?v=1.1"></script>
 </body>
 
 </html>

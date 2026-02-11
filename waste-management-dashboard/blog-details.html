@@ -17,8 +17,14 @@
             <a href="index.html" class="brand">
                 <i class="fa-solid fa-leaf"></i> EcoTrack
             </a>
-            <div class="mobile-menu-btn hidden-on-desktop">
-                <i class="fa-solid fa-bars"></i>
+            <div class="navbar-actions">
+                <button class="btn btn-outline theme-toggle" style="border:none; padding: 0.5rem; margin: 0;"><i
+                        class="fa-solid fa-moon"></i></button>
+                <button class="btn btn-outline rtl-toggle" style="border:none; padding: 0.5rem; margin: 0;"><i
+                        class="fa-solid fa-right-left"></i></button>
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
             <div class="nav-menu" id="navMenu">
                 <a href="index.html" class="nav-item-link">Home</a>
@@ -29,12 +35,11 @@
                 <a href="pricing.html" class="nav-item-link">Pricing</a>
                 <a href="contact.html" class="nav-item-link">Contact</a>
                 <div class="nav-spacer"></div>
-                <a href="login.html" class="btn btn-outline">Client Login <i class="fa-regular fa-user"></i></a>
-                <button id="themeToggle" class="btn btn-outline"
-                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i class="fa-solid fa-moon"></i></button>
-                <button id="rtlToggle" class="btn btn-outline"
-                    style="border:none; padding: 0.5rem; margin-left: 0.5rem;"><i
+                <button class="btn btn-outline theme-toggle" style="border:none; padding: 0.5rem; margin: 0 0.5rem;"><i
+                        class="fa-solid fa-moon"></i></button>
+                <button class="btn btn-outline rtl-toggle" style="border:none; padding: 0.5rem; margin: 0 0.5rem;"><i
                         class="fa-solid fa-right-left"></i></button>
+                <a href="login.html" class="btn btn-outline">Login <i class="fa-regular fa-user"></i></a>
             </div>
         </div>
     </nav>
@@ -43,43 +48,19 @@
 
         <!-- Main Content -->
         <article>
-            <div style="height: 400px; background: #E5E7EB; border-radius: var(--radius-lg); margin-bottom: 2rem;">
+            <div style="height: 400px; border-radius: var(--radius-lg); margin-bottom: 2rem; overflow: hidden;">
+                <img id="post-image" src="" alt="Blog Image" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
 
-            <div class="flex gap-4 text-muted mb-4">
-                <span><i class="fa-regular fa-calendar"></i> Oct 24, 2026</span>
-                <span><i class="fa-solid fa-user"></i> By Sarah Jenkins</span>
-                <span><i class="fa-solid fa-tag"></i> Recycling Education</span>
+            <div class="flex gap-4 text-muted mb-4" id="post-meta">
+                <!-- Javascript will populate this -->
             </div>
 
-            <h1 class="mb-4">5 Common Recycling Mistakes Businesses Make</h1>
+            <h1 class="mb-4" id="post-title">Loading...</h1>
 
-            <p class="text-lead mb-4">Recycling is a crucial part of any sustainable business strategy, but good
-                intentions often lead to contamination. Here’s how to fix it.</p>
-
-            <p class="mb-4 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-            <h3 class="mb-4 mt-4">1. Wish-cycling</h3>
-            <p class="mb-4 text-muted">"Wish-cycling" is the practice of tossing questionable items in the recycling
-                bin, hoping they can be recycled. This often leads to entire batches of recycling being sent to the
-                landfill due to contamination. Always check local guidelines.</p>
-
-            <h3 class="mb-4 mt-4">2. Dirty Containers</h3>
-            <p class="mb-4 text-muted">Food residue is a major contaminant. A greasy pizza box or a yogurt cup with
-                leftover spoon scrapings can ruin high-quality paper and plastic bales. A quick rinse makes a huge
-                difference.</p>
-
-            <blockquote
-                style="border-left: 4px solid var(--primary); padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--dark);">
-                "The purity of the recycling stream determines its value. Clean materials are commodities; dirty
-                materials are garbage."
-            </blockquote>
-
-            <h3 class="mb-4 mt-4">Conclusion</h3>
-            <p class="mb-4 text-muted">By educating your team and adding clear signage, you can significantly increase
-                your diversion rates and lower your waste costs.</p>
+            <div id="post-content">
+                <!-- Javascript will populate this -->
+            </div>
 
             <!-- Share -->
             <div style="padding-top: 2rem; border-top: 1px solid var(--border); margin-top: 2rem;">
@@ -99,13 +80,15 @@
 
                 <h4 class="mb-4">Categories</h4>
                 <ul class="flex flex-col gap-2">
-                    <li><a href="#" class="flex justify-between text-muted hover-primary"><span>Recycling</span>
+                    <li><a href="blog.html" class="flex justify-between text-muted hover-primary"><span>Recycling</span>
                             <span>(12)</span></a></li>
-                    <li><a href="#" class="flex justify-between text-muted hover-primary"><span>Industry News</span>
+                    <li><a href="blog.html" class="flex justify-between text-muted hover-primary"><span>Industry
+                                News</span>
                             <span>(5)</span></a></li>
-                    <li><a href="#" class="flex justify-between text-muted hover-primary"><span>Sustainability
+                    <li><a href="blog.html" class="flex justify-between text-muted hover-primary"><span>Sustainability
                                 Tips</span> <span>(8)</span></a></li>
-                    <li><a href="#" class="flex justify-between text-muted hover-primary"><span>Case Studies</span>
+                    <li><a href="blog.html" class="flex justify-between text-muted hover-primary"><span>Case
+                                Studies</span>
                             <span>(3)</span></a></li>
                 </ul>
             </div>
@@ -115,12 +98,28 @@
                 <div class="flex flex-col gap-4">
                     <div class="flex gap-2">
                         <div
-                            style="width: 60px; height: 60px; background: #D1D5DB; border-radius: var(--radius-sm); flex-shrink: 0;">
+                            style="width: 60px; height: 60px; border-radius: var(--radius-sm); flex-shrink: 0; overflow: hidden;">
+                            <img src="assets/img/blog/ai-sorting.png"
+                                style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div>
-                            <h5 style="font-size: 0.9rem; margin-bottom: 0.2rem;"><a href="#">The Future of AI
+                            <h5 style="font-size: 0.9rem; margin-bottom: 0.2rem;"><a
+                                    href="blog-details.html?id=ai-sorting">The Future of AI
                                     Sorting</a></h5>
                             <span style="font-size: 0.75rem; color: var(--text-muted);">Oct 18, 2026</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <div
+                            style="width: 60px; height: 60px; border-radius: var(--radius-sm); flex-shrink: 0; overflow: hidden;">
+                            <img src="assets/img/blog/expansion-seattle.png"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h5 style="font-size: 0.9rem; margin-bottom: 0.2rem;"><a
+                                    href="blog-details.html?id=west-coast-expansion">EcoTrack Expands to West Coast</a>
+                            </h5>
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Oct 10, 2026</span>
                         </div>
                     </div>
                 </div>
@@ -184,10 +183,147 @@
         <div class="container"
             style="border-top: 1px solid #374151; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.8rem;">
             &copy; 2026 EcoTrack Solutions. All rights reserved.
+            <br>
+            Powered by <a href="https://www.abhivorn.com/" target="_blank"
+                style="color: #6c757d; text-decoration: none;">AbhiVorn Technologies Pvt. Ltd.</a>
         </div>
     </footer>
 
     <script src="assets/js/theme-rtl.js"></script>
+    <script>
+        const blogData = {
+            "recycling-mistakes": {
+                title: "5 Common Recycling Mistakes Businesses Make",
+                image: "assets/img/blog/recycling-mistakes.png",
+                date: "Oct 24, 2026",
+                author: "Sarah Jenkins",
+                category: "Recycling Education",
+                content: `
+                    <p class="text-lead mb-4">Recycling is a crucial part of any sustainable business strategy, but good intentions often lead to contamination. Here’s how to fix it.</p>
+                    <p class="mb-4 text-muted">Many businesses believe they are recycling correctly, but simple errors can render entire batches of material unrecyclable. Contamination rates in commercial recycling streams can reach as high as 25% in some areas.</p>
+                    
+                    <h3 class="mb-4 mt-4">1. Wish-cycling</h3>
+                    <p class="mb-4 text-muted">"Wish-cycling" is the practice of tossing questionable items in the recycling bin, hoping they can be recycled. This often leads to equipment jams at sorting facilities and contamination of clean materials. If in doubt, throw it out—or better yet, check your local guidelines first.</p>
+                    
+                    <h3 class="mb-4 mt-4">2. Dirty Containers</h3>
+                    <p class="mb-4 text-muted">Food residue is a major contaminant. A greasy pizza box or a yogurt cup with leftover spoon scrapings can ruin high-quality paper and plastic bales. A quick rinse makes a huge difference. For cardboard, cut out the greasy parts and recycle the clean sections.</p>
+                    
+                    <h3 class="mb-4 mt-4">3. Plastic Bags</h3>
+                    <p class="mb-4 text-muted">Thin plastic film and grocery bags are notoriously difficult for standard sorting machines to handle. They wrap around gears and cause shutdowns. These should usually be taken to specialized drop-off locations, not put in curbside or commercial single-stream bins.</p>
+                    
+                    <h3 class="mb-4 mt-4">4. Coffee Cups</h3>
+                    <p class="mb-4 text-muted">Most paper coffee cups are lined with a thin layer of plastic to prevent leaks. This mixed material makes them difficult to recycle in standard paper mills. Unless explicitly stated otherwise, these often belong in the trash or specialized recycling streams.</p>
+
+                    <blockquote style="border-left: 4px solid var(--primary); padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--dark);">
+                        "The purity of the recycling stream determines its value. Clean materials are commodities; dirty materials are garbage."
+                    </blockquote>
+
+                    <h3 class="mb-4 mt-4">Conclusion</h3>
+                    <p class="mb-4 text-muted">By educating your team and adding clear signage with images of what is and isn't accepted, you can significantly increase your diversion rates and lower your waste costs. Small changes in habit lead to massive improvements in sustainability.</p>
+                `
+            },
+            "ai-sorting": {
+                title: "The Future of Waste: AI Sorting",
+                image: "assets/img/blog/ai-sorting.png",
+                date: "Oct 18, 2026",
+                author: "David Chen",
+                category: "Innovation",
+                content: `
+                    <p class="text-lead mb-4">How artificial intelligence is revolutionizing the way sorting facilities process recyclable materials.</p>
+                    <p class="mb-4 text-muted">The recycling industry has long relied on manual sorting to separate materials, a job that is dangerous, dirty, and prone to human error. Enter Artificial Intelligence and robotics, a combination that is transforming Material Recovery Facilities (MRFs) worldwide.</p>
+                    
+                    <h3 class="mb-4 mt-4">Computer Vision at Work</h3>
+                    <p class="mb-4 text-muted">Modern AI systems use advanced computer vision cameras to scan items on conveyor belts moving at high speeds. These systems can identify specific brands, material types (like PET vs. HDPE plastics), and even properly crushed cans versus uncrushed ones.</p>
+                    
+                    <h3 class="mb-4 mt-4">Robotic Arms</h3>
+                    <p class="mb-4 text-muted">Once an object is identified, high-speed robotic arms use suction or grippers to pluck the item off the line and deposit it into the correct bin. These robots can perform up to 80 picks per minute, far outpacing human capabilities and working 24/7 without fatigue.</p>
+                    
+                    <h3 class="mb-4 mt-4">Data-Driven Insights</h3>
+                    <p class="mb-4 text-muted">Beyond just sorting, these AI systems collect massive amounts of data. Facility managers can now see real-time analytics on the composition of incoming waste, allowing them to spot trends, identify sources of contamination, and optimize their operations for higher profitability.</p>
+
+                    <h3 class="mb-4 mt-4">Conclusion</h3>
+                    <p class="mb-4 text-muted">AI sorting is not just a technological gimmick; it is becoming a necessity for meeting stricter purity standards in the global recycling market. As the technology matures, we can expect to see significantly higher recycling rates and a more truly circular economy.</p>
+                `
+            },
+            "west-coast-expansion": {
+                title: "EcoTrack Expands to West Coast",
+                image: "assets/img/blog/expansion-seattle.png",
+                date: "Oct 10, 2026",
+                author: "EcoTrack Team",
+                category: "Company News",
+                content: `
+                    <p class="text-lead mb-4">We are proud to announce our new fleet operations center opening in Seattle this month.</p>
+                    <p class="mb-4 text-muted">EcoTrack has officially landed in the Pacific Northwest! Our new state-of-the-art facility in Seattle, Washington, marks a significant milestone in our mission to provide sustainable, tech-driven waste management solutions across North America.</p>
+                    
+                    <h3 class="mb-4 mt-4">Strategic Growth</h3>
+                    <p class="mb-4 text-muted">Seattle is known for its progressive environmental policies and commitment to sustainability, making it the perfect home for our newest hub. This expansion allows us to serve over 500 new commercial clients in the region immediately.</p>
+                    
+                    <h3 class="mb-4 mt-4">Green Fleet</h3>
+                    <p class="mb-4 text-muted">To align with local environmental goals, our Seattle fleet is our greenest yet. It is composed of 100% electric and hybrid automated side-loader trucks. This significantly reduces noise pollution and carbon emissions compared to traditional diesel refuse trucks.</p>
+                    
+                    <blockquote style="border-left: 4px solid var(--primary); padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--dark);">
+                        "Our expansion is about more than just business growth; it's about bringing smarter, cleaner waste solutions to communities that value their environment." - Sarah Jenkins, CEO
+                    </blockquote>
+
+                    <h3 class="mb-4 mt-4">Looking Ahead</h3>
+                    <p class="mb-4 text-muted">We are currently hiring for over 50 positions in operations, driving, and customer support. We look forward to building strong partnerships with local businesses and municipalities to help Seattle achieve its zero-waste targets.</p>
+                `
+            },
+            "compliance-guidelines": {
+                title: "2027 Waste Compliance Guidelines",
+                image: "assets/img/blog/compliance-guidelines.png",
+                date: "Oct 05, 2026",
+                author: "Legal Team",
+                category: "Regulations",
+                content: `
+                    <p class="text-lead mb-4">New federal regulations for commercial waste disposal enacted this quarter. Are you compliant?</p>
+                    <p class="mb-4 text-muted">Staying ahead of regulatory changes is critical to avoiding fines and maintaining a responsible brand image. The Environmental Protection Agency (EPA) has recently released updated guidelines for commercial waste disposal that will take full effect in January 2027.</p>
+                    
+                    <h3 class="mb-4 mt-4">Strict Organic Diversion</h3>
+                    <p class="mb-4 text-muted">The most significant change is the mandatory diversion of organic waste for businesses generating over 2 cubic yards of solid waste per week. This means restaurants, grocery stores, and large corporate cafeterias must have a separate collection stream for food scraps to be composted or processed via anaerobic digestion.</p>
+                    
+                    <h3 class="mb-4 mt-4">E-Waste Tracking</h3>
+                    <p class="mb-4 text-muted">New "Right to Repair" adjacent laws now require more detailed tracking of electronic waste. Businesses must prove that end-of-life electronics were sent to certified e-stewards for potential refurbishment before recycling.</p>
+                    
+                    <h3 class="mb-4 mt-4">Hazardous Waste Reporting</h3>
+                    <p class="mb-4 text-muted">The threshold for "Small Quantity Generators" of hazardous waste has been lowered. This means more small businesses (like dry cleaners and auto shops) will now be subject to stricter reporting and disposal manifestation requirements.</p>
+
+                    <h3 class="mb-4 mt-4">Action Steps</h3>
+                    <p class="mb-4 text-muted">We recommend all our clients schedule a compliance audit with their EcoTrack account manager before the end of the year. We can assess your current waste streams and ensure you have the necessary bins and documentation in place to meet these new standards effortlessly.</p>
+                `
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const postId = params.get('id') || 'recycling-mistakes'; // Default to first post
+        const post = blogData[postId] || blogData['recycling-mistakes'];
+
+        // Update Content
+        document.getElementById('post-title').textContent = post.title;
+        document.getElementById('post-image').src = post.image;
+        document.getElementById('post-image').alt = post.title;
+        document.getElementById('post-content').innerHTML = post.content;
+
+        // Update Meta
+        document.getElementById('post-meta').innerHTML = `
+            <span><i class="fa-regular fa-calendar"></i> ${post.date}</span>
+            <span><i class="fa-solid fa-user"></i> By ${post.author}</span>
+            <span><i class="fa-solid fa-tag"></i> ${post.category}</span>
+        `;
+    </script>
+
+    <footer style="background-color: #1F2937; padding: 2rem 0; margin-top: 4rem;">
+        <div class="container"
+            style="color: #6B7280; font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>&copy; 2026 EcoTrack Solutions. All rights reserved.</div>
+            <div>
+                Powered by <a href="https://www.abhivorn.com/" target="_blank"
+                    style="color: #6c757d; text-decoration: none; transition: color 0.3s;"
+                    onmouseover="this.style.color='#0d6efd'" onmouseout="this.style.color='#6c757d'">AbhiVorn
+                    Technologies Pvt. Ltd.</a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -14,10 +14,12 @@
     style="background-color: var(--light); display: flex; align-items: center; justify-content: center; min-height: 100vh;">
 
     <div style="position: absolute; top: 1rem; right: 1rem; display: flex; gap: 0.5rem;">
-        <button id="themeToggle" class="btn btn-outline" style="border:none; padding: 0.5rem;"><i
-                class="fa-solid fa-moon"></i></button>
-        <button id="rtlToggle" class="btn btn-outline" style="border:none; padding: 0.5rem;"><i
-                class="fa-solid fa-right-left"></i></button>
+        <button id="themeToggle" class="auth-toggle-btn theme-toggle" title="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="rtlToggle" class="auth-toggle-btn rtl-toggle" title="Toggle RTL">
+            <i class="fa-solid fa-language"></i>
+        </button>
     </div>
 
     <div class="card" style="width: 100%; max-width: 400px; padding: 2.5rem;">
@@ -52,12 +54,15 @@
         </form>
 
         <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center;">
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Demo Quick Access</p>
-            <div class="flex gap-2 justify-center">
-                <a href="dashboard/admin/index.html" style="font-size: 0.8rem; text-decoration: underline;">Admin
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Demo Quick Access</p>
+            <div
+                style="background: var(--light); border-radius: var(--radius-md); padding: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
+                <a href="dashboard/admin/index.html" class="btn btn-outline"
+                    style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-width: 1px;">Admin
                     Demo</a>
                 <span style="color: var(--border);">|</span>
-                <a href="dashboard/client/index.html" style="font-size: 0.8rem; text-decoration: underline;">Client
+                <a href="dashboard/client/index.html" class="btn btn-outline"
+                    style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-width: 1px;">Client
                     Demo</a>
             </div>
         </div>

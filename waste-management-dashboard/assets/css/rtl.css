@@ -19,7 +19,37 @@ html[dir="rtl"] .sidebar {
 html[dir="rtl"] .main-content {
     margin-left: 0;
     margin-right: 280px;
-    /* Width of sidebar */
+}
+
+@media (max-width: 1024px) {
+    html[dir="rtl"] .main-content {
+        margin-right: 0;
+        padding-top: calc(60px + 1rem);
+    }
+
+    html[dir="rtl"] .sidebar {
+        transform: translateX(100%);
+        /* Hide to the right in RTL */
+    }
+
+    html[dir="rtl"] .sidebar.active {
+        transform: translateX(0);
+    }
+
+    html[dir="rtl"] .dashboard-header {
+        margin: 0;
+        left: 0;
+        right: 0;
+        /* Put header-left on the left and actions on the right in RTL */
+    }
+}
+
+/* Fixed Header Correction for RTL Desktop */
+html[dir="rtl"] .dashboard-header {
+    left: 0;
+    right: 0;
+    /* Full width */
+    /* Desktop consistency */
 }
 
 /* Navbar Adjustments */
@@ -39,21 +69,10 @@ html[dir="rtl"] #themeToggle {
     direction: ltr;
 }
 
-/* Flip Icons for RTL */
-html[dir="rtl"] .fa-chevron-right::before {
-    content: "\f053";
-}
-
-html[dir="rtl"] .fa-chevron-left::before {
-    content: "\f054";
-}
-
-html[dir="rtl"] .fa-arrow-right::before {
-    content: "\f060";
-}
-
-html[dir="rtl"] .fa-arrow-left::before {
-    content: "\f061";
+/* Keep icons and specific elements in LTR if they are UI controls that shouldn't flip */
+html[dir="rtl"] #rtlToggle,
+html[dir="rtl"] #themeToggle {
+    direction: ltr;
 }
 
 /* Table Headings Alignment */

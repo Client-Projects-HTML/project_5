@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings | Admin Dashboard</title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css?v=1.3">
     <link rel="stylesheet" href="../../assets/css/rtl.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -38,15 +38,12 @@
                 <a href="reports.html" class="nav-item">
                     <i class="fa-solid fa-file-invoice"></i> Reports
                 </a>
-                <div style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 1rem;">
-
-                    <a href="settings.html" class="nav-item active">
-                        <i class="fa-solid fa-gear"></i> Settings
-                    </a>
-                    <a href="../../login.html" class="nav-item logout-sidebar">
-                        <i class="fa-solid fa-right-from-bracket"></i> Logout
-                    </a>
-                </div>
+                <a href="settings.html" class="nav-item active">
+                    <i class="fa-solid fa-gear"></i> Settings
+                </a>
+                <a href="../../login.html" class="nav-item logout-sidebar">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </a>
             </nav>
         </aside>
 
@@ -56,24 +53,48 @@
             <header class="dashboard-header">
                 <div class="header-left">
                     <button class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
-                    <div>
-                        <h2 style="margin-bottom: 0; font-size: 1.25rem;">System Settings</h2>
-                        <p class="text-muted" style="font-size: 0.85rem;">Dashboard preferences and account overview</p>
-                    </div>
+                    <a href="../../index.html" class="dashboard-brand">
+                        <i class="fa-solid fa-leaf"></i> EcoTrack
+                    </a>
+                    <h2 class="header-title">Settings</h2>
                 </div>
                 <div class="header-actions">
-                    <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Save
-                        Changes</button>
-                    <button id="rtlToggle" class="header-btn" title="Toggle RTL">
+                    <button id="rtlToggle" class="header-btn rtl-toggle" title="Toggle RTL">
                         <i class="fa-solid fa-language"></i>
                     </button>
-                    <button id="themeToggle" class="header-btn" title="Toggle Theme">
+                    <button id="themeToggle" class="header-btn theme-toggle" title="Toggle Theme">
                         <i class="fa-solid fa-moon"></i>
                     </button>
-                    <button class="header-btn" title="Notifications">
-                        <i class="fa-regular fa-bell"></i>
-                        <span class="badge"></span>
-                    </button>
+                    <div class="notification-container">
+                        <button id="notificationBell" class="header-btn" title="Notifications">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="badge"></span>
+                        </button>
+                        <div id="notificationDropdown" class="notification-dropdown">
+                            <div class="notification-header">
+                                <h4>Notifications</h4>
+                                <span class="text-primary text-sm font-bold" style="cursor: pointer;">Mark all as
+                                    read</span>
+                            </div>
+                            <div class="notification-list">
+                                <a href="#" class="notification-item">
+                                    <div class="notification-icon"
+                                        style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;">
+                                        <i class="fa-solid fa-gear"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <span class="notification-title">Settings Updated</span>
+                                        <span class="notification-desc">Global notification preferences have been
+                                            saved.</span>
+                                        <span class="notification-time">2 hours ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="notification-footer">
+                                <a href="#" class="text-primary text-sm font-bold">View all notifications</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="user-profile">
                         <div class="user-avatar">A</div>
                         <div class="user-info">
@@ -84,13 +105,20 @@
                 </div>
             </header>
 
+            <div class="flex justify-end mb-4">
+                <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Save Changes</button>
+            </div>
+
             <div class="grid grid-cols-2">
 
                 <!-- General Settings -->
                 <div class="card">
                     <h3 class="mb-4">General Profile</h3>
                     <div class="flex items-center gap-4 mb-4">
-                        <div style="width: 80px; height: 80px; background: #D1D5DB; border-radius: 50%;"></div>
+                        <div
+                            style="width: 80px; height: 80px; background: #E5E7EB; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #9CA3AF;">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
                         <div>
                             <button class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.85rem;">Change
                                 Photo</button>
@@ -98,55 +126,120 @@
                     </div>
                     <div class="mb-4">
                         <label class="form-label">Full Name</label>
-                        <input type="text" class="form-input" value="Admin User">
+                        <input type="text" id="fullName" class="form-input" value="Admin User">
                     </div>
                     <div class="mb-4">
                         <label class="form-label">Email Address</label>
-                        <input type="email" class="form-input" value="admin@ecotrack.com">
+                        <input type="email" id="emailAddress" class="form-input" value="admin@ecotrack.com">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Bio (Short Description)</label>
+                        <textarea id="bio" class="form-input" rows="3"
+                            style="resize: none;">Head of Operations at EcoTrack. Dedicated to optimizing waste management routes and improving client sustainability.</textarea>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="form-label">Phone Number</label>
+                            <input type="text" id="phoneNumber" class="form-input" value="+1 (555) 000-1234">
+                        </div>
+                        <div>
+                            <label class="form-label">Location</label>
+                            <input type="text" id="location" class="form-input" value="New York, USA">
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <label class="form-label">Department</label>
+                        <input type="text" id="department" class="form-input" value="Operations">
                     </div>
                 </div>
 
                 <!-- Notifications -->
                 <div class="card">
-                    <h3 class="mb-4">Notifications</h3>
-                    <div class="flex flex-col gap-4">
-                        <label class="flex items-center gap-3 cursor-pointer">
-                            <input type="checkbox" checked>
-                            <span>Email me when a bin is reported full</span>
-                        </label>
-                        <label class="flex items-center gap-3 cursor-pointer">
-                            <input type="checkbox" checked>
-                            <span>Email me upon vehicle breakdown alerts</span>
-                        </label>
-                        <label class="flex items-center gap-3 cursor-pointer">
-                            <input type="checkbox">
-                            <span>Weekly summary reports</span>
-                        </label>
+                    <h3 class="mb-4">Notification Preferences</h3>
+                    <div class="flex flex-col gap-5">
+                        <div class="notif-group">
+                            <h4 style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;"
+                                class="mb-2">Admin Alerts</h4>
+                            <label class="flex items-center justify-between cursor-pointer mb-2">
+                                <span>Bin "Full" Reports</span>
+                                <div class="flex gap-4">
+                                    <span class="text-xs text-muted">Email <input type="checkbox" checked></span>
+                                    <span class="text-xs text-muted">SMS <input type="checkbox"></span>
+                                </div>
+                            </label>
+                            <label class="flex items-center justify-between cursor-pointer mb-2">
+                                <span>Vehicle Breakdown Alerts</span>
+                                <div class="flex gap-4">
+                                    <span class="text-xs text-muted">Email <input type="checkbox" checked></span>
+                                    <span class="text-xs text-muted">SMS <input type="checkbox" checked></span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="notif-group">
+                            <h4 style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;"
+                                class="mb-2">Support & Activity</h4>
+                            <label class="flex items-center justify-between cursor-pointer mb-2">
+                                <span>New Ticket Responses</span>
+                                <div class="flex gap-4">
+                                    <span class="text-xs text-muted">Email <input type="checkbox" checked></span>
+                                    <span class="text-xs text-muted">Push <input type="checkbox" checked></span>
+                                </div>
+                            </label>
+                            <label class="flex items-center justify-between cursor-pointer mb-2">
+                                <span>Weekly Summary Reports</span>
+                                <div class="flex gap-4">
+                                    <span class="text-xs text-muted">Email <input type="checkbox"></span>
+                                </div>
+                            </label>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Security -->
                 <div class="card" style="grid-column: span 2;">
-                    <h3 class="mb-4">Security</h3>
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="margin-0">Security</h3>
+                        <button id="updatePasswordBtn" class="btn btn-primary"
+                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Update Password</button>
+                    </div>
                     <div class="grid grid-cols-3 gap-4">
                         <div class="mb-4">
                             <label class="form-label">Current Password</label>
-                            <input type="password" class="form-input" placeholder="••••••••">
+                            <input type="password" id="currentPassword" class="form-input" placeholder="••••••••">
                         </div>
                         <div class="mb-4">
                             <label class="form-label">New Password</label>
-                            <input type="password" class="form-input" placeholder="••••••••">
+                            <input type="password" id="newPassword" class="form-input" placeholder="••••••••">
                         </div>
                         <div class="mb-4">
                             <label class="form-label">Confirm Password</label>
-                            <input type="password" class="form-input" placeholder="••••••••">
+                            <input type="password" id="confirmPassword" class="form-input" placeholder="••••••••">
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Info Modal (Reusable) -->
+            <div id="infoModal" class="modal-backdrop"
+                style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1100; align-items: center; justify-content: center;">
+                <div class="card" style="width: 400px; max-width: 90%; margin: 0; text-align: center; padding: 2.5rem;">
+                    <div id="infoModalIconContainer"
+                        style="width: 60px; height: 60px; background: #ECFDF5; color: #10B981; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.75rem;">
+                        <i id="infoModalIcon" class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 id="infoModalTitle" style="margin-bottom: 0.5rem;">Success!</h3>
+                    <p id="infoModalMessage" style="color: var(--text-muted); margin-bottom: 2rem;">Action completed
+                        successfully.</p>
+                    <button class="btn btn-primary w-full close-modal">Got it</button>
+                </div>
+            </div>
+
         </main>
     </div>
+
     <script src="../../assets/js/theme-rtl.js"></script>
+    <script src="../../assets/js/settings.js"></script>
 </body>
 
 </html>
