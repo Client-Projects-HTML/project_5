@@ -82,6 +82,27 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggle) toggle.setAttribute('aria-expanded', 'false');
     }
 
+    // Generic Dropdown Toggle (for Home and others)
+    const dropdownToggles = document.querySelectorAll('.has-dropdown');
+
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+                e.preventDefault();
+                e.stopPropagation();
+                const parent = toggle.closest('.nav-item-dropdown');
+                if (parent) {
+                    parent.classList.toggle('open');
+                    const icon = toggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-chevron-down');
+                        icon.classList.toggle('fa-chevron-up');
+                    }
+                }
+            }
+        });
+    });
+
     if (loginDropdownToggles.length) {
         loginDropdownToggles.forEach(toggle => {
             toggle.addEventListener('click', (e) => {

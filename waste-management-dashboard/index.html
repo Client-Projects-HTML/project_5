@@ -31,8 +31,15 @@
                 </div>
             </div>
             <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-item-link active"
-                    style="color: var(--primary); font-weight: 600;">Home</a>
+                <div class="nav-item-dropdown">
+                    <a href="#" class="nav-item-link active has-dropdown"
+                        style="color: var(--primary); font-weight: 600;">Home <i class="fa-solid fa-chevron-down"
+                            style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1: General Services</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2: SaaS / Agency</a>
+                    </div>
+                </div>
                 <a href="about.html" class="nav-item-link">About</a>
                 <a href="services.html" class="nav-item-link">Services</a>
                 <a href="blog.html" class="nav-item-link">Blog</a>
@@ -59,30 +66,110 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero"
+        style="background: linear-gradient(135deg, var(--light) 0%, var(--surface) 100%); padding: 8rem 0 6rem 0; overflow: hidden;">
         <div class="container grid grid-cols-2 items-center">
-            <div>
-                <span class="text-primary"
-                    style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Sustainable
-                    Operations</span>
-                <h1 class="display-1 mb-4">Smart Waste Management for a Greener Future</h1>
-                <p class="text-lead mb-4">
-                    Optimize your waste collection, ensure regulatory compliance, and drive sustainability with our
-                    AI-powered SaaS platform.
+            <div style="position: relative; z-index: 1;">
+                <span
+                    style="background: rgba(5, 150, 105, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Smart
+                    Sustainability</span>
+                <h1 class="display-1 mb-4 mt-4" style="font-weight: 800; color: var(--dark);">Total Waste Management
+                    <br> <span class="text-primary">Evolved.</span></h1>
+                <p class="text-lead mb-6" style="font-size: 1.25rem;">
+                    From smart sensors to zero-emission logistics, we provide the infrastructure for a cleaner,
+                    more efficient future.
                 </p>
                 <div class="flex gap-4">
-                    <a href="dashboard/admin/index.html" class="btn btn-primary">
-                        View Dashboard Demo <i class="fa-solid fa-arrow-right"></i>
+                    <a href="services.html" class="btn btn-primary btn-lg">
+                        Get Started <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="about.html" class="btn btn-outline btn-lg">
+                        Learn More
                     </a>
                 </div>
             </div>
-            <!-- Placeholder for Hero Image (simulated with icon for now or I could generate one, but let's stick to clean CSS/Icons) -->
-            <div style="text-align: center;">
-                <i class="fa-solid fa-recycle" style="font-size: 15rem; color: var(--primary); opacity: 1;"></i>
-                <!-- In a real app, I'd put a Dashboard Mockup here -->
+
+            <div style="position: relative; display: flex; justify-content: center; align-items: center;">
+                <!-- Decorative background elements -->
+                <div
+                    style="position: absolute; width: 400px; height: 400px; background: var(--primary); opacity: 0.1; filter: blur(80px); border-radius: 50%; z-index: 0;">
+                </div>
+
+                <!-- Mockup Card -->
+                <div class="card shadow-xl"
+                    style="position: relative; z-index: 1; background: var(--surface); border-radius: 20px; padding: 1.5rem; width: 100%; max-width: 450px; border: 1px solid var(--border); transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);">
+                    <div class="flex justify-between items-center mb-6">
+                        <div style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">Total Diversion Rate</div>
+                        <div class="badge"
+                            style="background: rgba(54, 211, 153, 0.1); color: #059669; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 700;">
+                            +12.5% Today</div>
+                    </div>
+
+                    <div
+                        style="height: 15rem; display: flex; align-items: flex-end; gap: 0.75rem; padding-bottom: 1rem;">
+                        <div style="flex: 1; height: 40%; background: var(--border); border-radius: 8px 8px 4px 4px;">
+                        </div>
+                        <div
+                            style="flex: 1; height: 65%; background: var(--text-muted); opacity: 0.3; border-radius: 8px 8px 4px 4px;">
+                        </div>
+                        <div style="flex: 1; height: 50%; background: var(--border); border-radius: 8px 8px 4px 4px;">
+                        </div>
+                        <div
+                            style="flex: 1; height: 85%; background: var(--primary); border-radius: 8px 8px 4px 4px; box-shadow: 0 4px 12px rgba(5,150,105,0.3);">
+                        </div>
+                        <div
+                            style="flex: 1; height: 60%; background: var(--text-muted); opacity: 0.3; border-radius: 8px 8px 4px 4px;">
+                        </div>
+                        <div
+                            style="flex: 1; height: 75%; background: var(--text-muted); opacity: 0.3; border-radius: 8px 8px 4px 4px;">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div
+                            style="background: var(--light); padding: 1rem; border-radius: 12px; border: 1px solid var(--border);">
+                            <div class="text-muted" style="font-size: 0.8rem; margin-bottom: 0.25rem;">Active Bins</div>
+                            <div style="font-weight: 700; font-size: 1.25rem; color: var(--dark);">1,248</div>
+                        </div>
+                        <div
+                            style="background: var(--light); padding: 1rem; border-radius: 12px; border: 1px solid var(--border);">
+                            <div class="text-muted" style="font-size: 0.8rem; margin-bottom: 0.25rem;">CO2 Saved</div>
+                            <div style="font-weight: 700; font-size: 1.25rem; color: var(--primary);">82.4 Tons</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
+
+    <!-- Social Proof Section -->
+    <section
+        style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 3rem 0;">
+        <div class="container">
+            <p class="text-center text-muted"
+                style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; font-weight: 700; margin-bottom: 2rem;">
+                Trusted by Forward-Thinking Organizations
+            </p>
+            <div class="flex justify-between items-center flex-wrap gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-300"
+                style="padding: 0 2rem;">
+                <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);"><i
+                        class="fa-solid fa-globe"></i>
+                    GLOBAL-TECH</div>
+                <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);"><i
+                        class="fa-solid fa-leaf"></i>
+                    ECO-SYS</div>
+                <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);"><i
+                        class="fa-solid fa-city"></i>
+                    URBAN-MOD</div>
+                <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);"><i
+                        class="fa-solid fa-microchip"></i>
+                    SUSTAIN-AI</div>
+                <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);"><i
+                        class="fa-solid fa-truck-fast"></i>
+                    LOGI-NET</div>
+            </div>
+        </div>
+    </section>
 
     <!-- Features Section -->
     <section class="container" style="padding: 2.5rem 1.5rem;">
