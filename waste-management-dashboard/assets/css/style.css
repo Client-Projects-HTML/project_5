@@ -394,6 +394,11 @@ body.dark .nav-item.active {
         box-shadow: 10px 0 15px -3px rgba(0, 0, 0, 0.1);
     }
 
+    .sidebar-header {
+        display: block;
+        padding: 1rem 1.5rem;
+    }
+
     .main-content {
         margin-left: 0;
         padding: 1rem;
@@ -440,7 +445,60 @@ body.dark .nav-item.active {
 }
 
 /* Dashboard Navbar (Header) Styles */
+@media (max-width: 400px) {
+    .dashboard-header {
+        padding: 0 0.5rem;
+    }
+
+    .header-left {
+        gap: 0.75rem;
+    }
+
+    .dashboard-brand span {
+        display: none;
+    }
+
+    .header-actions {
+        gap: 0.4rem;
+        flex-wrap: nowrap;
+    }
+
+    .user-info {
+        display: none;
+    }
+
+    .user-profile {
+        padding-left: 0.5rem;
+        margin-left: 0.25rem;
+    }
+
+    .header-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .header-btn i {
+        font-size: 1rem;
+    }
+
+    /* Prevent notification dropdown from going off-screen */
+    .notification-dropdown {
+        position: fixed !important;
+        left: 0.75rem !important;
+        right: 0.75rem !important;
+        width: auto !important;
+        top: 65px !important;
+        z-index: 1300 !important;
+        transform: none !important;
+    }
+
+    .notification-item {
+        padding: 0.75rem;
+    }
+}
+
 .dashboard-header {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -495,9 +553,11 @@ body.dark .header-title {
 }
 
 @media (max-width: 768px) {
-    .header-title {
-        display: none;
-        /* Hide title on mobile to make room for logo and actions */
+
+    .header-title,
+    .dashboard-brand {
+        display: none !important;
+        /* Hide title and navbar logo on mobile to make room for actions */
     }
 }
 
@@ -509,6 +569,8 @@ body.dark .dashboard-header {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    margin-left: auto;
+    flex-shrink: 0;
 }
 
 .header-btn {
@@ -638,6 +700,7 @@ body.dark .notification-item:hover {
 
 .notification-content {
     flex: 1;
+    min-width: 0;
 }
 
 .notification-title {
@@ -652,6 +715,9 @@ body.dark .notification-item:hover {
     color: var(--text-muted);
     line-height: 1.4;
     display: block;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .notification-time {
@@ -898,7 +964,7 @@ html[dir="rtl"] .user-profile {
 }
 
 .hero {
-    padding: 6rem 0;
+    padding: 3rem 0;
     background: linear-gradient(135deg, var(--light) 0%, #D1FAE5 100%);
     position: relative;
     overflow: hidden;
@@ -1080,6 +1146,65 @@ html[dir="rtl"] .user-profile {
 }
 
 .nav-item:hover .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.login-dropdown-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    border: 2px solid #94a3b8;
+    border-radius: var(--radius-md);
+    overflow: visible;
+    background: transparent;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-dropdown-wrapper:hover,
+.login-dropdown-wrapper.open {
+    border-color: var(--primary);
+}
+
+.login-dropdown-wrapper .login-link {
+    border: none !important;
+    border-radius: 0;
+    margin: 0 !important;
+    box-shadow: none !important;
+    padding-right: 1rem;
+}
+
+.login-dropdown-toggle {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-left: 1px solid #94a3b8;
+    background: transparent;
+    color: var(--text-main);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.login-dropdown-toggle:hover {
+    color: var(--primary);
+}
+
+.login-dropdown-menu {
+    left: auto;
+    right: 0;
+    top: calc(100% + 0.35rem);
+}
+
+.login-dropdown-wrapper.open .login-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.login-dropdown-wrapper.open .fa-chevron-down {
     transform: rotate(180deg);
 }
 
@@ -1392,6 +1517,62 @@ body.dark .mobile-menu-btn:hover {
 
     .nav-menu a.btn-outline:hover {
         color: var(--primary) !important;
+    }
+
+    .login-dropdown-wrapper {
+        width: 100%;
+        display: block;
+        border: none;
+        border-radius: 0;
+        overflow: visible;
+    }
+
+    .nav-menu .login-dropdown-wrapper .login-link {
+        display: flex !important;
+        width: 100%;
+        padding: 1rem 0 !important;
+        border: none !important;
+        border-bottom: 1px solid var(--border) !important;
+        border-radius: 0;
+        justify-content: flex-start;
+        background: transparent !important;
+        color: var(--text-main) !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+
+    .login-dropdown-toggle {
+        position: absolute;
+        top: 0.55rem;
+        right: 0;
+        width: 34px;
+        height: 34px;
+        border: none;
+        background: transparent;
+    }
+
+    .login-dropdown-wrapper .login-dropdown-menu {
+        position: static;
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+        transform: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        padding: 0 0 0.5rem 0;
+    }
+
+    .login-dropdown-wrapper.open .login-dropdown-menu {
+        display: block;
+    }
+
+    .nav-menu .login-dropdown-menu .dropdown-item {
+        width: 100%;
+        border-bottom: 1px solid var(--border);
+        padding: 0.75rem 0 0.75rem 1rem;
     }
 
     #navMenu #themeToggle,
@@ -1808,4 +1989,30 @@ html[dir="rtl"] .header-left {
 
 .chart-responsive-height {
     height: 300px;
+}
+
+/* Blog Page Enhancements */
+.blog-search-wrapper {
+    width: 300px;
+    max-width: 100%;
+}
+
+@media (max-width: 640px) {
+    .blog-search-wrapper {
+        width: 100% !important;
+    }
+}
+
+.blog-meta {
+    flex-wrap: wrap !important;
+}
+
+.blog-meta span {
+    white-space: nowrap;
+}
+
+@media (max-width: 360px) {
+    .display-2 {
+        font-size: 1.75rem !important;
+    }
 }

@@ -73,6 +73,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Public Navbar Login Dropdown
+    const loginDropdownToggles = document.querySelectorAll('.login-dropdown-toggle');
+
+    function closeLoginDropdown(wrapper) {
+        wrapper.classList.remove('open');
+        const toggle = wrapper.querySelector('.login-dropdown-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    if (loginDropdownToggles.length) {
+        loginDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const wrapper = toggle.closest('.login-dropdown-wrapper');
+                if (!wrapper) return;
+
+                const willOpen = !wrapper.classList.contains('open');
+                document.querySelectorAll('.login-dropdown-wrapper.open').forEach(openWrapper => {
+                    if (openWrapper !== wrapper) closeLoginDropdown(openWrapper);
+                });
+
+                wrapper.classList.toggle('open', willOpen);
+                toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+            });
+        });
+    }
+
     // Dashboard Sidebar Toggle (Mobile)
     const sidebarToggle = document.querySelector('.sidebar-toggle');
     const sidebar = document.querySelector('.sidebar');
@@ -91,6 +120,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Global click listener to close sidebars and dropdowns
     document.addEventListener('click', (e) => {
+        // Close public navbar login dropdown
+        document.querySelectorAll('.login-dropdown-wrapper.open').forEach(wrapper => {
+            if (!wrapper.contains(e.target)) closeLoginDropdown(wrapper);
+        });
+
         // Close sidebar on mobile
         if (window.innerWidth <= 1024 &&
             sidebar && sidebar.classList.contains('active') &&

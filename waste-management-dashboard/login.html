@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | EcoTrack</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -31,6 +32,29 @@
             <p class="text-muted">Welcome back! Please login to your account.</p>
         </div>
 
+        <div
+            style="margin-top: 1rem; margin-bottom: 0.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center;">
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 600;">Select Your
+                Portal</p>
+            <div
+                style="background: var(--light); border-radius: var(--radius-md); padding: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
+                <a href="dashboard/admin/index.html" class="btn btn-outline"
+                    style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-width: 1px;">Admin
+                    Login</a>
+                <span style="color: var(--border);">|</span>
+                <a href="dashboard/client/index.html" class="btn btn-outline"
+                    style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-width: 1px;">Client
+                    Login</a>
+            </div>
+        </div>
+
+        <div
+            style="display: flex; align-items: center; margin: 1.5rem 0; color: var(--text-muted); font-size: 0.85rem;">
+            <div style="flex: 1; height: 1px; background: var(--border);"></div>
+            <div style="padding: 0 0.75rem; font-weight: 500;">OR</div>
+            <div style="flex: 1; height: 1px; background: var(--border);"></div>
+        </div>
+
         <form action="dashboard/client/index.html" method="GET">
             <div class="mb-4">
                 <label for="email" class="form-label">Email Address</label>
@@ -40,9 +64,10 @@
             <div class="mb-4">
                 <div class="flex justify-between">
                     <label for="password" class="form-label">Password</label>
-                    <a href="forgot-password.html" style="font-size: 0.85rem; color: var(--primary);">Forgot?</a>
+                    <a href="forgot-password.html" style="font-size: 0.85rem; color: var(--primary);">Forgot
+                        Password?</a>
                 </div>
-                <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                <input type="password" id="password" class="form-input" placeholder="********" required>
             </div>
 
             <button type="submit" class="btn btn-primary w-full mb-4">Sign In</button>
@@ -53,19 +78,6 @@
             </div>
         </form>
 
-        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center;">
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Demo Quick Access</p>
-            <div
-                style="background: var(--light); border-radius: var(--radius-md); padding: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
-                <a href="dashboard/admin/index.html" class="btn btn-outline"
-                    style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-width: 1px;">Admin
-                    Demo</a>
-                <span style="color: var(--border);">|</span>
-                <a href="dashboard/client/index.html" class="btn btn-outline"
-                    style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-width: 1px;">Client
-                    Demo</a>
-            </div>
-        </div>
     </div>
 
     <script src="assets/js/theme-rtl.js"></script>
