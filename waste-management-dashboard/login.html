@@ -32,28 +32,7 @@
             <p class="text-muted">Welcome back! Please login to your account.</p>
         </div>
 
-        <div
-            style="margin-top: 1rem; margin-bottom: 0.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center;">
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 600;">Select Your
-                Portal</p>
-            <div
-                style="background: var(--light); border-radius: var(--radius-md); padding: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
-                <a href="dashboard/admin/index.html" class="btn btn-outline"
-                    style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-width: 1px;">Admin
-                    Login</a>
-                <span style="color: var(--border);">|</span>
-                <a href="dashboard/client/index.html" class="btn btn-outline"
-                    style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-width: 1px;">Client
-                    Login</a>
-            </div>
-        </div>
 
-        <div
-            style="display: flex; align-items: center; margin: 1.5rem 0; color: var(--text-muted); font-size: 0.85rem;">
-            <div style="flex: 1; height: 1px; background: var(--border);"></div>
-            <div style="padding: 0 0.75rem; font-weight: 500;">OR</div>
-            <div style="flex: 1; height: 1px; background: var(--border);"></div>
-        </div>
 
         <form action="dashboard/client/index.html" method="GET">
             <div class="mb-4">
@@ -70,7 +49,26 @@
                 <input type="password" id="password" class="form-input" placeholder="********" required>
             </div>
 
-            <button type="submit" class="btn btn-primary w-full mb-4">Sign In</button>
+            <button type="submit" class="btn btn-primary w-full mb-6">Sign In</button>
+
+            <div
+                style="display: flex; align-items: center; margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.8rem;">
+                <div style="flex: 1; height: 1px; background: var(--border);"></div>
+                <div style="padding: 0 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Or
+                    continue with</div>
+                <div style="flex: 1; height: 1px; background: var(--border);"></div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+                <button type="button" class="btn btn-outline flex items-center justify-center gap-2"
+                    style="padding: 0.75rem; border-radius: var(--radius-md);">
+                    <i class="fa-brands fa-google" style="color: #DB4437;"></i> Google
+                </button>
+                <button type="button" class="btn btn-outline flex items-center justify-center gap-2"
+                    style="padding: 0.75rem; border-radius: var(--radius-md);">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </button>
+            </div>
 
             <div style="text-align: center; font-size: 0.9rem; color: var(--text-muted);">
                 Don't have an account? <a href="register.html" style="color: var(--primary); font-weight: 500;">Sign

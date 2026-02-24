@@ -32,8 +32,8 @@
                     <a href="#" class="nav-item-link has-dropdown">Home <i class="fa-solid fa-chevron-down"
                             style="font-size: 0.7rem;"></i></a>
                     <div class="dropdown-menu">
-                        <a href="index.html" class="dropdown-item">Home 1: General Services</a>
-                        <a href="home-2.html" class="dropdown-item">Home 2: SaaS / Agency</a>
+                        <a href="index.html" class="dropdown-item">Home 1</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2</a>
                     </div>
                 </div>
                 <a href="about.html" class="nav-item-link">About</a>
@@ -47,9 +47,10 @@
                         class="fa-solid fa-moon"></i></button>
                 <button class="btn btn-outline rtl-toggle" style="border:none; padding: 0.5rem; margin: 0 0.5rem;"><i
                         class="fa-solid fa-right-left"></i></button>
-                <div class="dropdown-wrapper">
+                <div class="login-dropdown-wrapper">
                     <a href="login.html" class="btn btn-outline login-link">Login <i class="fa-regular fa-user"></i></a>
-                    <button type="button" class="dropdown-toggle" aria-label="Open login portals" aria-expanded="false">
+                    <button type="button" class="login-dropdown-toggle" aria-label="Open login portals"
+                        aria-expanded="false">
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="dropdown-menu login-dropdown-menu">
@@ -68,121 +69,207 @@
         </div>
     </header>
 
-    <section class="container" style="padding: 1.5rem 1.5rem;">
-
-        <!-- Search & Filter -->
-        <div class="flex justify-between items-center mb-4 flex-wrap gap-4">
-            <div class="filter-scroll-container">
-                <div class="flex gap-2">
-                    <a href="#" class="btn btn-primary blog-filter-btn" data-filter="all"
-                        style="padding: 0.5rem 1rem; font-size: 0.85rem; white-space: nowrap;">All</a>
-                    <a href="#" class="btn btn-outline blog-filter-btn" data-filter="tips"
-                        style="padding: 0.5rem 1rem; font-size: 0.85rem; white-space: nowrap;">Tips</a>
-                    <a href="#" class="btn btn-outline blog-filter-btn" data-filter="company"
-                        style="padding: 0.5rem 1rem; font-size: 0.85rem; white-space: nowrap;">Company News</a>
-                    <a href="#" class="btn btn-outline blog-filter-btn" data-filter="regulations"
-                        style="padding: 0.5rem 1rem; font-size: 0.85rem; white-space: nowrap;">Regulations</a>
+    <!-- Featured Post -->
+    <section class="container" style="padding: 2.5rem 1.5rem 0 1.5rem;">
+        <div class="card bg-dark-section" style="padding: 0; overflow: hidden; border-radius: 20px; border: none;">
+            <div class="grid grid-cols-2" style="align-items: stretch;">
+                <div style="padding: 3rem;">
+                    <span
+                        style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Featured
+                        Post</span>
+                    <h2 class="display-1 mb-6 mt-2" style="color: white;">EcoTrack AI: Predicting the Next Generation of
+                        Sustainability</h2>
+                    <p class="text-lead mb-8" style="color: #9CA3AF;">Discover how our latest predictive algorithms are
+                        helping cities anticipate waste surges before they happen, saving millions in emergency cleanup
+                        costs.</p>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div style="width: 40px; height: 40px; background: var(--border); border-radius: 50%;"></div>
+                        <div>
+                            <div style="font-weight: 700;">Dr. Aris Thorne</div>
+                            <div style="font-size: 0.8rem; color: #9CA3AF;">Chief AI Scientist</div>
+                        </div>
+                    </div>
+                    <a href="blog-details.html?id=ai-sorting" class="btn btn-primary">Read Article</a>
                 </div>
+                <div style="background: url('assets/img/blog/ai-sorting.png') center/cover;"></div>
             </div>
-            <div class="blog-search-wrapper">
-                <input type="text" class="form-input" placeholder="Search articles...">
-            </div>
-        </div>
-
-        <!-- Blog Grid -->
-        <div class="grid grid-cols-2" id="blogGrid" style="align-items: start;">
-
-            <!-- Article 1 -->
-            <article class="card blog-item" data-category="regulations" style="padding: 0; overflow: hidden;">
-                <div style="height: 200px; overflow: hidden;">
-                    <img src="assets/img/blog/compliance-guidelines.png" alt="Compliance Guidelines"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div style="padding: 1.5rem;">
-                    <div class="flex gap-2 text-muted blog-meta" style="font-size: 0.8rem; margin-bottom: 0.5rem;">
-                        <span><i class="fa-regular fa-calendar"></i> Oct 05, 2026</span>
-                        <span><i class="fa-regular fa-user"></i> By Legal Team</span>
-                        <span><i class="fa-solid fa-tag"></i> Regulations</span>
-                    </div>
-                    <h3 style="font-size: 1.25rem;"><a href="blog-details.html?id=compliance-guidelines">2027 Waste
-                            Compliance Guidelines</a></h3>
-                    <p class="text-muted mt-2" style="font-size: 0.9rem;">New federal regulations for commercial waste
-                        disposal enacted this quarter. Are you compliant?</p>
-                    <a href="blog-details.html?id=compliance-guidelines" class="text-primary mt-4"
-                        style="display: inline-block; font-weight: 500;">Read More <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <!-- Article 2 -->
-            <article class="card blog-item" data-category="tips" style="padding: 0; overflow: hidden;">
-                <div style="height: 200px; overflow: hidden;">
-                    <img src="assets/img/blog/ai-sorting.png" alt="AI Sorting"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div style="padding: 1.5rem;">
-                    <div class="flex gap-2 text-muted blog-meta" style="font-size: 0.8rem; margin-bottom: 0.5rem;">
-                        <span><i class="fa-regular fa-calendar"></i> Oct 18, 2026</span>
-                        <span><i class="fa-regular fa-user"></i> By David Chen</span>
-                        <span><i class="fa-solid fa-tag"></i> Innovation</span>
-                    </div>
-                    <h3 style="font-size: 1.25rem;"><a href="blog-details.html?id=ai-sorting">The Future of Waste: AI
-                            Sorting</a></h3>
-                    <p class="text-muted mt-2" style="font-size: 0.9rem;">How artificial intelligence is revolutionizing
-                        the way sorting facilities process recyclable materials.</p>
-                    <a href="blog-details.html?id=ai-sorting" class="text-primary mt-4"
-                        style="display: inline-block; font-weight: 500;">Read More <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <!-- Article 3 -->
-            <article class="card blog-item" data-category="company" style="padding: 0; overflow: hidden;">
-                <div style="height: 200px; overflow: hidden;">
-                    <img src="assets/img/blog/expansion-seattle.png" alt="Seattle Expansion"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div style="padding: 1.5rem;">
-                    <div class="flex gap-2 text-muted blog-meta" style="font-size: 0.8rem; margin-bottom: 0.5rem;">
-                        <span><i class="fa-regular fa-calendar"></i> Oct 10, 2026</span>
-                        <span><i class="fa-regular fa-user"></i> By EcoTrack Team</span>
-                        <span><i class="fa-solid fa-tag"></i> Company</span>
-                    </div>
-                    <h3 style="font-size: 1.25rem;"><a href="blog-details.html?id=west-coast-expansion">EcoTrack Expands
-                            to West Coast</a></h3>
-                    <p class="text-muted mt-2" style="font-size: 0.9rem;">We are proud to announce our new fleet
-                        operations center opening in Seattle this month.</p>
-                    <a href="blog-details.html?id=west-coast-expansion" class="text-primary mt-4"
-                        style="display: inline-block; font-weight: 500;">Read More <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-
-
-            <!-- Article 4 (Tips) -->
-            <article class="card blog-item" data-category="tips" style="padding: 0; overflow: hidden;">
-                <div style="height: 200px; overflow: hidden;">
-                    <img src="assets/img/blog/recycling-mistakes.png" alt="Recycling Mistakes"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div style="padding: 1.5rem;">
-                    <div class="flex gap-2 text-muted blog-meta" style="font-size: 0.8rem; margin-bottom: 0.5rem;">
-                        <span><i class="fa-regular fa-calendar"></i> Oct 24, 2026</span>
-                        <span><i class="fa-regular fa-user"></i> By Sarah Jenkins</span>
-                        <span><i class="fa-solid fa-tag"></i> Recycling Education</span>
-                    </div>
-                    <h3 style="font-size: 1.25rem;"><a href="blog-details.html?id=recycling-mistakes">5 Common Recycling
-                            Mistakes Businesses Make</a></h3>
-                    <p class="text-muted mt-2" style="font-size: 0.9rem;">Recycling is a crucial part of any sustainable
-                        business strategy, but good intentions often lead to contamination. Here is how to fix it.</p>
-                    <a href="blog-details.html?id=recycling-mistakes" class="text-primary mt-4"
-                        style="display: inline-block; font-weight: 500;">Read More <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
         </div>
     </section>
+
+    <section class="container" style="padding: 4rem 1.5rem;">
+        <div class="grid" style="grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start;">
+
+            <!-- Blog Posts Area -->
+            <div>
+                <!-- Search & Filter Area (Inside main grid) -->
+                <div class="flex justify-between items-center mb-8 flex-wrap gap-4">
+                    <div class="filter-scroll-container">
+                        <div class="flex gap-2">
+                            <a href="#" class="btn btn-primary blog-filter-btn" data-filter="all"
+                                style="padding: 0.5rem 1rem; font-size: 0.85rem; white-space: nowrap;">All</a>
+                            <a href="#" class="btn btn-outline blog-filter-btn" data-filter="tips"
+                                style="padding: 0.5rem 1rem; font-size: 0.85rem; white-space: nowrap;">Tips</a>
+                            <a href="#" class="btn btn-outline blog-filter-btn" data-filter="company"
+                                style="padding: 0.5rem 1rem; font-size: 0.85rem; white-space: nowrap;">Company News</a>
+                            <a href="#" class="btn btn-outline blog-filter-btn" data-filter="regulations"
+                                style="padding: 0.5rem 1rem; font-size: 0.85rem; white-space: nowrap;">Regulations</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Grid -->
+                <div class="grid grid-cols-2" id="blogGrid" style="gap: 2rem; align-items: start;">
+                    <!-- Article 1 -->
+                    <article class="card blog-item" data-category="regulations"
+                        style="padding: 0; overflow: hidden; border-radius: 12px; height: 100%; display: flex; flex-direction: column;">
+                        <div style="height: 180px; overflow: hidden;">
+                            <img src="assets/img/blog/compliance-guidelines.png" alt="Compliance Guidelines"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                            <div class="flex gap-2 text-muted blog-meta"
+                                style="font-size: 0.75rem; margin-bottom: 0.5rem;">
+                                <span><i class="fa-regular fa-calendar"></i> Oct 05, 2026</span>
+                                <span><i class="fa-solid fa-tag"></i> Regulations</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.75rem;"><a
+                                    href="blog-details.html?id=compliance-guidelines">2027 Waste Compliance
+                                    Guidelines</a></h4>
+                            <p class="text-muted" style="font-size: 0.85rem; line-height: 1.5; flex-grow: 1;">New
+                                federal regulations for commercial waste disposal enacted this quarter.</p>
+                            <a href="blog-details.html?id=compliance-guidelines" class="text-primary mt-4"
+                                style="display: block; font-weight: 600; font-size: 0.85rem;">Read More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="card blog-item" data-category="innovation"
+                        style="padding: 0; overflow: hidden; border-radius: 12px; height: 100%; display: flex; flex-direction: column;">
+                        <div style="height: 180px; overflow: hidden;">
+                            <img src="assets/img/blog/ai-sorting.png" alt="AI Sorting"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                            <div class="flex gap-2 text-muted blog-meta"
+                                style="font-size: 0.75rem; margin-bottom: 0.5rem;">
+                                <span><i class="fa-regular fa-calendar"></i> Oct 18, 2026</span>
+                                <span><i class="fa-solid fa-tag"></i> Innovation</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.75rem;"><a href="blog-details.html?id=ai-sorting">The Future of
+                                    Waste: AI Sorting</a></h4>
+                            <p class="text-muted" style="font-size: 0.85rem; line-height: 1.5; flex-grow: 1;">How
+                                artificial intelligence is revolutionizing how facilities process materials.</p>
+                            <a href="blog-details.html?id=ai-sorting" class="text-primary mt-4"
+                                style="display: block; font-weight: 600; font-size: 0.85rem;">Read More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="card blog-item" data-category="company"
+                        style="padding: 0; overflow: hidden; border-radius: 12px; height: 100%; display: flex; flex-direction: column;">
+                        <div style="height: 180px; overflow: hidden;">
+                            <img src="assets/img/blog/expansion-seattle.png" alt="Seattle Expansion"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                            <div class="flex gap-2 text-muted blog-meta"
+                                style="font-size: 0.75rem; margin-bottom: 0.5rem;">
+                                <span><i class="fa-regular fa-calendar"></i> Oct 10, 2026</span>
+                                <span><i class="fa-solid fa-tag"></i> Company</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.75rem;"><a
+                                    href="blog-details.html?id=west-coast-expansion">EcoTrack Expands to West Coast</a>
+                            </h4>
+                            <p class="text-muted" style="font-size: 0.85rem; line-height: 1.5; flex-grow: 1;">We are
+                                proud to announce our new fleet operations center opening in Seattle.</p>
+                            <a href="blog-details.html?id=west-coast-expansion" class="text-primary mt-4"
+                                style="display: block; font-weight: 600; font-size: 0.85rem;">Read More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article class="card blog-item" data-category="tips"
+                        style="padding: 0; overflow: hidden; border-radius: 12px; height: 100%; display: flex; flex-direction: column;">
+                        <div style="height: 180px; overflow: hidden;">
+                            <img src="assets/img/blog/recycling-mistakes.png" alt="Recycling Mistakes"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                            <div class="flex gap-2 text-muted blog-meta"
+                                style="font-size: 0.75rem; margin-bottom: 0.5rem;">
+                                <span><i class="fa-regular fa-calendar"></i> Oct 24, 2026</span>
+                                <span><i class="fa-solid fa-tag"></i> Education</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.75rem;"><a href="blog-details.html?id=recycling-mistakes">5
+                                    Common Recycling Mistakes</a></h4>
+                            <p class="text-muted" style="font-size: 0.85rem; line-height: 1.5; flex-grow: 1;">Recycling
+                                is crucial, but good intentions often lead to contamination.</p>
+                            <a href="blog-details.html?id=recycling-mistakes" class="text-primary mt-4"
+                                style="display: block; font-weight: 600; font-size: 0.85rem;">Read More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Sidebar Area -->
+            <aside>
+                <div class="card mb-8" style="padding: 2rem;">
+                    <h4 class="mb-4">Search</h4>
+                    <div class="blog-search-wrapper" style="width: 100%; position: relative;">
+                        <input type="text" class="form-input" placeholder="Search articles..."
+                            style="padding-right: 2.5rem;">
+                        <i class="fa-solid fa-magnifying-glass"
+                            style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                    </div>
+                </div>
+
+                <div class="card mb-8" style="padding: 2rem;">
+                    <h4 class="mb-4">Categories</h4>
+                    <ul class="flex flex-col gap-3">
+                        <li><a href="#"
+                                class="flex justify-between items-center text-muted hover:text-primary transition-all"><span>Tips</span>
+                                <span
+                                    style="background: var(--light); padding: 0.1rem 0.5rem; border-radius: 12px; font-size: 0.75rem;">12</span></a>
+                        </li>
+                        <li><a href="#"
+                                class="flex justify-between items-center text-muted hover:text-primary transition-all"><span>Company
+                                    News</span> <span
+                                    style="background: var(--light); padding: 0.1rem 0.5rem; border-radius: 12px; font-size: 0.75rem;">5</span></a>
+                        </li>
+                        <li><a href="#"
+                                class="flex justify-between items-center text-muted hover:text-primary transition-all"><span>Regulations</span>
+                                <span
+                                    style="background: var(--light); padding: 0.1rem 0.5rem; border-radius: 12px; font-size: 0.75rem;">8</span></a>
+                        </li>
+                        <li><a href="#"
+                                class="flex justify-between items-center text-muted hover:text-primary transition-all"><span>Case
+                                    Studies</span> <span
+                                    style="background: var(--light); padding: 0.1rem 0.5rem; border-radius: 12px; font-size: 0.75rem;">3</span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card bg-dark-section" style="padding: 2rem; text-align: center; border: none;">
+                    <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"><i
+                            class="fa-regular fa-envelope-open"></i></div>
+                    <h3 style="color: white; margin-bottom: 0.5rem;">Newsletter</h3>
+                    <p style="color: #9CA3AF; font-size: 0.85rem; margin-bottom: 1.5rem;">Subscribe to get the latest
+                        sustainability insights delivered to your inbox.</p>
+                    <form>
+                        <input type="email" class="form-input mb-3" placeholder="Enter email address"
+                            style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: white;">
+                        <button type="button" class="btn btn-primary w-full">Subscribe Now</button>
+                    </form>
+                    <p style="font-size: 0.7rem; color: #6B7280; margin-top: 1rem;">No spam, just pure green value.</p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
 
     <!-- Footer -->
     <footer style="background: var(--dark); color: white; padding: 3rem 0;">

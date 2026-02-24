@@ -179,6 +179,10 @@ a.btn-outline[href*="login"] {
 }
 
 /* Layout Utilities */
+.text-center {
+    text-align: center;
+}
+
 .container {
     width: 100%;
     max-width: 1280px;
@@ -861,10 +865,18 @@ html[dir="rtl"] .user-profile {
     padding: 1.5rem;
     box-shadow: var(--shadow-sm);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .card:hover {
     box-shadow: var(--shadow-md);
+}
+
+.card>.btn,
+.card>a.btn {
+    margin-top: auto;
 }
 
 .stat-card {
@@ -1401,6 +1413,28 @@ body.dark input::-webkit-calendar-picker-indicator:hover {
 body.dark footer {
     background-color: #0B0F19 !important;
     border-top-color: #374151 !important;
+}
+
+/* High-Contrast Sections (Dark in both modes) */
+.bg-dark-section {
+    background-color: #111827 !important;
+    /* Gray 900 */
+    color: white !important;
+}
+
+.bg-dark-section h1,
+.bg-dark-section h2,
+.bg-dark-section h3,
+.bg-dark-section h4,
+.bg-dark-section h5,
+.bg-dark-section p,
+.bg-dark-section .text-lead {
+    color: white !important;
+}
+
+.bg-dark-section .text-muted {
+    color: #9CA3AF !important;
+    /* Gray 400 */
 }
 
 /* Logical Properties Utilities */
