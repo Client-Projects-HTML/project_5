@@ -241,6 +241,10 @@ a.btn-outline[href*="login"] {
     justify-content: space-between;
 }
 
+.justify-center {
+    justify-content: center;
+}
+
 .gap-4 {
     gap: 1rem;
 }
@@ -1420,6 +1424,7 @@ body.dark footer {
     background-color: #111827 !important;
     /* Gray 900 */
     color: white !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .bg-dark-section h1,
